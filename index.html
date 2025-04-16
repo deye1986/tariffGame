@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>Shipping Mangement Job Control Screen</header>
+    <nav>
+
+    </nav>
+    <main class="game-container">
+        <p>Game ticker and status bar</p>        
+        <div class="image viewer">
+            <p class="staus-bar">image window</p>
+
+        </div>
+
+        <div class="game-status">
+            <p>game status window</p>
+            <p>days elapsed: </p><p id="game-timer">0</p>
+        </div>
+
+        <div class="game-controls">
+            <p>buttons and controls</p>
+            <button 
+                onclick="playTime = setInterval(counter, 1000)" 
+                id="start-game-button">Start
+            </button>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

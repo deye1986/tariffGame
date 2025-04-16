@@ -1,0 +1,39 @@
+/* element edges to be removed when finished */
+
+div, main{
+    border: 2px solid red;
+}
+
+/* GUI */
+
+header{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-container{
+    display: grid;
+
+}
+
+.image-viewer{
+    margin: auto;
+
+}
+
+.game-status{
+}
+
+.game-controls{
+    border-radius: 30em 60em;
+}
+
+/*  buttons */
+
+.start-game-button{
+    margin: 1em;
+    padding: 1em;
+}
