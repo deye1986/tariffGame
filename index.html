@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" async></script>
-    <title>Document</title>
+    <title>Trumps Tarrifs</title>
 </head>
 <body>
     <header>Shipping Mangement Job Control Screen</header>
@@ -28,11 +28,15 @@
         <div class="game-controls">
             <p>buttons and controls</p>
             <button 
-                onclick="playTime = setInterval(counter, 1000)" 
+                onclick="playTime = setInterval(counter, 1000)"
                 id="start-game-button">Start
             </button>
         </div>
         <div id="button-container"></div>
+        <!--TODO: Check if there's a better way for the image and canvas to be correct height
+        currently setting to 1024, will this look ok on big screens? -->
+        <canvas width="1024" height="1024" id="viewport"></canvas>
+        <!--<img src="world-map.jpeg" alt="World Map" />-->
     </main>
     <footer></footer>
 </body>

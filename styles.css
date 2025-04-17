@@ -37,3 +37,9 @@ p{
     margin: 1em;
     padding: 1em;
 }
+
+canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+}
