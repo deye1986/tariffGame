@@ -14,9 +14,14 @@
 
     </nav>
     <main class="game-container">
-        <p id="game-ticker">Game ticker and status bar</p>        
+        <p id="game-ticker">Game ticker and status bar</p>
+        <button onclick="displayMessageOnTicker('this is a test!')"
+        id="test-ticker-button">
+            test ticker
+        </button>    
+        
         <div class="image viewer">
-            <p class="staus-bar">image window</p>
+            <p>image window</p>
 
         </div>
 
@@ -28,8 +33,9 @@
         <div class="game-controls">
             <p>buttons and controls</p>
             <button 
-                onclick="playTime = setInterval(counter, 1000)" 
-                id="start-game-button">Start
+            onclick="playTime = setInterval(counter, 1000)" 
+            id="start-game-button">
+                Start
             </button>
         </div>
     </main>
