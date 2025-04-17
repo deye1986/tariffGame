@@ -43,3 +43,7 @@ canvas {
   margin: auto;
   display: block;
 }
+.test-ticker-button{
+    margin: 1em;
+    padding: 1em;
+}
