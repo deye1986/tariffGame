@@ -54,7 +54,7 @@ function loadImage() {
   image.src = 'world-map.svg';
   image.onload = function(){
     context.drawImage(image, 0, 0, image.width, image.height);
-    context.fillStyle = 'lightblue';
+
     const cords = countries.filter(c => c.imgCords != null);
     // Draw country bounds
     cords.forEach(c => {
@@ -72,8 +72,11 @@ function loadImage() {
 
 canvas.addEventListener('click', (event) => {
   const rect = canvas.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  const x = (event.clientX - rect.left) * scaleX;
+  const y = (event.clientY - rect.top) * scaleY;
 
   const cords = countries.filter(
     c => c.imgCords != null
@@ -90,6 +93,7 @@ canvas.addEventListener('click', (event) => {
 loadCountryButtons = () => {
   countries.forEach(country => {
     const button = document.createElement('button');
+    button.setAttribute('type', 'button');
     button.textContent = country.name + ' ' + country.tarrif; 
     button.addEventListener('click', () => addTarrif(country.id, 10)); 
     container.appendChild(button); 
