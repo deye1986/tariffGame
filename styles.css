@@ -36,7 +36,7 @@ canvas{
 
 .game-container{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr;
 
 }
 
@@ -45,6 +45,7 @@ canvas{
 
 .game-controls{
     border-radius: 30em 60em;
+    max-height: 10em;
 }
 
 /*  buttons */
