@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'PixelifySans-Bold';
-  src: url(PixelifySans-Bold.ttf) format('woff2');
+  src: url(/fonts/PixelifySans-Bold.ttf) format('woff2');
  }
 
 div, main{
