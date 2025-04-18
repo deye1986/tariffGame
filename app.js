@@ -5,8 +5,21 @@ function counter() {
     document.getElementById("start-game-button").disabled = true;
 }
 
+let i = 0;
+const speed = 50;
+
 function displayMessageOnTicker(outputMessage) {
-    document.getElementById("game-ticker").innerHTML = outputMessage;
+  if (i < outputMessage.length) {
+    document.getElementById("game-ticker").innerHTML += outputMessage.charAt(i);
+    i++;
+    setTimeout(() => displayMessageOnTicker(outputMessage), speed);
+  } else {
+    i = 0;
+  }
+}
+
+function clearMessageOnTicker() {
+  document.getElementById("game-ticker").innerHTML = '';
 }
 
 const chinaId = 2;
@@ -119,12 +132,13 @@ addTarrif = (countryId, tarrif) => {
 const chinaResponses = [
   { tarrif: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
   { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
-  { tarrif: 100, response: "We don't care America, you need us more than we need you!"}
+  { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
 ];
 
 chinaResponse = (country) => {
   const response = chinaResponses.find(cr => cr.tarrif == country.tarrif);
   if (country.id === chinaId && response) {
+    clearMessageOnTicker();
     displayMessageOnTicker(response.response);
   }
 }
