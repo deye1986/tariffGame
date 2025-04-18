@@ -1,18 +1,15 @@
 /* element edges to be removed when finished */
 
+@font-face {
+  font-family: 'PixelifySans-Bold';
+  src: url(PixelifySans-Bold.ttf) format('woff2');
+ }
+
 div, main{
     border: 2px solid red;
 }
 
 /* GUI */
-
-header{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-p{
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 .game-container{
     display: grid;

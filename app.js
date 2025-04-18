@@ -1,6 +1,5 @@
 let gameTime = 0;
 
-
 function counter() {
     document.getElementById("game-timer").innerHTML = ++gameTime;
     document.getElementById("start-game-button").disabled = true;
@@ -52,7 +51,7 @@ const image = new Image();
 loadImage();
 
 function loadImage() {
-  image.src = 'world-map.jpeg';
+  image.src = 'world-map.svg';
   image.onload = function(){
     context.drawImage(image, 0, 0, image.width, image.height);
     context.fillStyle = 'lightblue';
