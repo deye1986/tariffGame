@@ -123,5 +123,6 @@ chinaResponse = (country) => {
   const response = chinaResponses.find(cr => cr.tarrif == country.tarrif);
   if (country.id === chinaId && response) {
     alert(response.response);
+    displayMessageOnTicker(response.response);
   }
 }

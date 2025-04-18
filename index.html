@@ -15,13 +15,9 @@
     </nav>
     <main class="game-container">
         <p id="game-ticker">Game ticker and status bar</p>
-        <button onclick="displayMessageOnTicker('this is a test!')"
-        id="test-ticker-button">
-            test ticker
-        </button>    
-        
+            
         <div class="image viewer">
-            <p>image window</p>
+            <canvas width="600" height="500" id="viewport"></canvas>
 
         </div>
 
@@ -31,18 +27,14 @@
         </div>
 
         <div class="game-controls">
-            <p>buttons and controls</p>
+            <div id="button-container"></div>
             <button 
             onclick="playTime = setInterval(counter, 1000)" 
             id="start-game-button">
                 Start
             </button>
         </div>
-        <div id="button-container"></div>
-        <!--TODO: Check if there's a better way for the image and canvas to be correct height
-        currently setting to 1024, will this look ok on big screens? -->
-        <canvas width="1024" height="1024" id="viewport"></canvas>
-        <!--<img src="world-map.jpeg" alt="World Map" />-->
+
     </main>
     <footer></footer>
 </body>
