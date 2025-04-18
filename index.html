@@ -9,12 +9,21 @@
     <title>Trumps Tarrifs</title>
 </head>
 <body>
-    <header>President Trumps Tarrif Controls</header>
+    <header>
+        President Trumps Tarrif Controls
+        <button onclick="playTime = setInterval(counter, 1000)" 
+        id="start-game-button" type="button">
+          Start
+      </button>
+    </header>
     <nav>
 
     </nav>
     <main class="game-container">
-            
+        <div class="game-controls">
+            <div id="button-container"></div>
+        </div>
+
         <div class="image viewer">
             <canvas width="1024" height="1024" id="viewport"></canvas>
         </div>
@@ -24,13 +33,7 @@
             <p>days elapsed: </p><p id="game-timer">0</p>
         </div>
 
-        <div class="game-controls">
-            <div id="button-container"></div>
-            <button onclick="playTime = setInterval(counter, 1000)" 
-              id="start-game-button" type="button">
-                Start
-            </button>
-        </div>
+
 
     </main>
     <footer></footer>

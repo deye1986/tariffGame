@@ -41,7 +41,7 @@ canvas{
 
 .game-container{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr;
 
 }
 
@@ -50,6 +50,7 @@ canvas{
 
 .game-controls{
     border-radius: 30em 60em;
+    max-height: 10em;
 }
 
 /*  buttons */
@@ -71,4 +72,17 @@ canvas {
 
 #id {
 
+}
+
+
+@media screen {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    canvas {
+        max-width: 100%;
+        max-height: auto;
+    }
 }
