@@ -1,6 +1,6 @@
 let gameTime = 0;
 
-function counter() {
+counter = () => {
     document.getElementById("game-timer").innerHTML = ++gameTime;
     document.getElementById("start-game-button").disabled = true;
 }
@@ -8,7 +8,7 @@ function counter() {
 let i = 0;
 const speed = 50;
 
-function displayMessageOnTicker(outputMessage) {
+displayMessageOnTicker = outputMessage => {
   if (i < outputMessage.length) {
     document.getElementById("game-ticker").innerHTML += outputMessage.charAt(i);
     i++;
@@ -18,17 +18,18 @@ function displayMessageOnTicker(outputMessage) {
   }
 }
 
-function clearMessageOnTicker() {
-  document.getElementById("game-ticker").innerHTML = '';
-}
-
 const chinaId = 2;
 
 let countries = [
   { id: 1, name: 'UK', tarrif: 0, 
     imgCords: { x: 475, y: 375, width: 50, height: 50 } },
   { id: chinaId, name: 'China', tarrif: 0, 
-    imgCords: { x: 800, y: 450, width: 300, height: 100 } },
+    imgCords: { x: 800, y: 450, width: 300, height: 100 },
+    responses: [
+      { tarrif: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
+      { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
+      { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
+    ] },
   { id: 3, name: 'EU', tarrif: 0, 
     imgCords: { x: 580, y: 350, width: 120, height: 200 } },
   { id: 4, name: 'Mexico', tarrif: 0,
@@ -65,11 +66,11 @@ loadImage();
 
 function loadImage() {
   image.src = 'world-map.svg';
-  image.onload = function(){
+  image.onload = () => {
     context.drawImage(image, 0, 0, image.width, image.height);
 
     const cords = countries.filter(c => c.imgCords != null);
-    // Draw country bounds
+
     cords.forEach(c => {
       const width = c.imgCords.width;
       const height = c.imgCords.height;
@@ -126,19 +127,13 @@ addTarrif = (countryId, tarrif) => {
   countries = countries.map(c => c.id === countryId ? country : c);
   removeCountryButtons();
   loadCountryButtons();
-  chinaResponse(country);
+  response(country);
 }
 
-const chinaResponses = [
-  { tarrif: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
-  { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
-  { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
-];
-
-chinaResponse = (country) => {
-  const response = chinaResponses.find(cr => cr.tarrif == country.tarrif);
-  if (country.id === chinaId && response) {
-    clearMessageOnTicker();
+response = (country) => {
+  const response = country.responses?.find(cr => cr.tarrif == country.tarrif);
+  if (response) {
+    displayMessageOnTicker('');
     displayMessageOnTicker(response.response);
   }
 }
