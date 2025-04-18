@@ -11,6 +11,11 @@ div, main{
 
 /* GUI */
 
+canvas{
+    max-height: 30em;
+    max-width: 40em;
+}
+
 .game-container{
     display: grid;
     grid-template-columns: 50% 50%;
