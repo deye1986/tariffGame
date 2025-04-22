@@ -53,9 +53,10 @@ clearMessageOnTicker = () => {
   ticker.innerHTML = '';
 }
 
+const countryItem = 'countries';
 const chinaId = 2;
 
-let countries = [
+let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
   { id: 1, name: 'UK', tarrif: 0, 
     imgCords: { x: 475, y: 375, width: 50, height: 50 } },
   { id: chinaId, name: 'China', tarrif: 0, 
@@ -178,3 +179,9 @@ document.getElementById("dialog-close").addEventListener("click", () => {
   dialog.close();
   clearMessageOnTicker();
 });
+
+save = () => {
+  const data = JSON.stringify(countries);
+  console.log('saving', data)
+  localStorage.setItem(countryItem, data);
+}
