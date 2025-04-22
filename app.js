@@ -7,7 +7,7 @@ counter = () => {
 
 const dialog = document.querySelector("dialog");
 
-const speed = 50;
+const typingSpeed = 50;
 let messageQueue = [];
 let isDisplaying = false;
 
@@ -18,7 +18,9 @@ function displayMessageOnTicker(outputMessage) {
   }
 }
 
-function processQueue() {
+const ticker = document.getElementById("game-ticker");
+
+processQueue = () => {
   if (messageQueue.length === 0) {
     isDisplaying = false;
     return;
@@ -27,28 +29,30 @@ function processQueue() {
   isDisplaying = true;
   let i = 0;
   const outputMessage = messageQueue.shift();
-  const ticker = document.getElementById("game-ticker");
+  
+  console.log('outputMessage', outputMessage)
 
   showCharacter = () => {
-    if (i < outputMessage.length) {
+    if (i < outputMessage.length && isDisplaying) {
       ticker.innerHTML += outputMessage.charAt(i);
       i++;
-      setTimeout(showCharacter, speed);
+      setTimeout(showCharacter, typingSpeed);
     } else {
       setTimeout(() => {
         messageQueue = messageQueue.filter(m => m != outputMessage);
         isDisplaying = false;
         processQueue();
-      }, speed);
+      }, typingSpeed);
     }
   }
 
   showCharacter();
 }
 
-
 clearMessageOnTicker = () => {
-  document.getElementById("game-ticker").innerHTML = '';
+  messageQueue = [];
+  isDisplaying = false;
+  ticker.innerHTML = '';
 }
 
 const chinaId = 2;
@@ -89,13 +93,10 @@ let countries = [
 ];
 
 const container = document.getElementById('button-container');
-
 const canvas = document.getElementById('viewport'),
 context = canvas.getContext('2d');
 
 const image = new Image();
-
-loadImage();
 
 drawBoundsOnImage = () => {
   context.drawImage(image, 0, 0, image.width, image.height);
@@ -114,10 +115,12 @@ drawBoundsOnImage = () => {
   });
 }
 
-function loadImage() {
+loadImage = () => {
   image.src = 'world-map.svg';
   image.onload = () => drawBoundsOnImage();
 }
+
+loadImage();
 
 addTarrifOnClick = event => {
   const rect = canvas.getBoundingClientRect();
@@ -127,16 +130,14 @@ addTarrifOnClick = event => {
   const x = (event.clientX - rect.left) * scaleX;
   const y = (event.clientY - rect.top) * scaleY;
 
-  const cords = countries.filter(
+  const countries = countries.filter(
     c => c.imgCords != null
     && x >= (c.imgCords.x - c.imgCords.width / 2)
     && x <= (c.imgCords.x + c.imgCords.width / 2)
     && y >= (c.imgCords.y - c.imgCords.height / 2)
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
-  cords.forEach(c => {
-    addTarrif(c.id, 10);
-  });
+    countries.forEach(c => addTarrif(c, 10));
 }
 
 canvas.addEventListener('click', addTarrifOnClick);
@@ -145,8 +146,8 @@ loadCountryButtons = () => {
   countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
-    button.textContent = country.name + ' ' + country.tarrif; 
-    button.addEventListener('click', () => addTarrif(country.id, 10)); 
+    button.textContent = country.name + ' ' + country.tarrif;
+    button.addEventListener('click', () => addTarrif(country, 10)); 
     container.appendChild(button); 
   });
 }
@@ -158,16 +159,15 @@ removeCountryButtons = () => {
 
 loadCountryButtons();
 
-addTarrif = (countryId, tarrif) => {
-  const country = countries.find(c => c.id == countryId);
+addTarrif = (country, tarrif) => {
   country.tarrif = country.tarrif + tarrif;
-  countries = countries.map(c => c.id === countryId ? country : c);
+  countries = countries.map(c => c.id === country.id ? country : c);
   removeCountryButtons();
   loadCountryButtons();
-  response(country);
+  tarrifResponse(country);
 }
 
-response = (country) => {
+tarrifResponse = (country) => {
   const response = country.responses?.find(cr => cr.tarrif == country.tarrif);
   if (response) {
     clearMessageOnTicker();
@@ -176,8 +176,7 @@ response = (country) => {
   }
 }
 
-const closeButton = document.querySelector("dialog button");
-
-closeButton.addEventListener("click", () => {
+document.getElementById("dialog-close").addEventListener("click", () => {
   dialog.close();
+  clearMessageOnTicker();
 });
