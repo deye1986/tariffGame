@@ -5,17 +5,50 @@ counter = () => {
     document.getElementById("start-game-button").disabled = true;
 }
 
-let i = 0;
-const speed = 50;
+const dialog = document.querySelector("dialog");
 
-displayMessageOnTicker = outputMessage => {
-  if (i < outputMessage.length) {
-    document.getElementById("game-ticker").innerHTML += outputMessage.charAt(i);
-    i++;
-    setTimeout(() => displayMessageOnTicker(outputMessage), speed);
-  } else {
-    i = 0;
+const speed = 50;
+let messageQueue = [];
+let isDisplaying = false;
+
+function displayMessageOnTicker(outputMessage) {
+  messageQueue.push(outputMessage);
+  if (!isDisplaying) {
+    processQueue();
   }
+}
+
+function processQueue() {
+  if (messageQueue.length === 0) {
+    isDisplaying = false;
+    return;
+  }
+
+  isDisplaying = true;
+  let i = 0;
+  const outputMessage = messageQueue.shift();
+  const ticker = document.getElementById("game-ticker");
+
+  showCharacter = () => {
+    if (i < outputMessage.length) {
+      ticker.innerHTML += outputMessage.charAt(i);
+      i++;
+      setTimeout(showCharacter, speed);
+    } else {
+      setTimeout(() => {
+        messageQueue = messageQueue.filter(m => m != outputMessage);
+        isDisplaying = false;
+        processQueue();
+      }, speed);
+    }
+  }
+
+  showCharacter();
+}
+
+
+clearMessageOnTicker = () => {
+  document.getElementById("game-ticker").innerHTML = '';
 }
 
 const chinaId = 2;
@@ -64,27 +97,29 @@ const image = new Image();
 
 loadImage();
 
-function loadImage() {
-  image.src = 'world-map.svg';
-  image.onload = () => {
-    context.drawImage(image, 0, 0, image.width, image.height);
+drawBoundsOnImage = () => {
+  context.drawImage(image, 0, 0, image.width, image.height);
 
-    const cords = countries.filter(c => c.imgCords != null);
+  const cords = countries.filter(c => c.imgCords != null);
 
-    cords.forEach(c => {
-      const width = c.imgCords.width;
-      const height = c.imgCords.height;
-      const x = c.imgCords.x;
-      const y = c.imgCords.y;
+  cords.forEach(c => {
+    const width = c.imgCords.width;
+    const height = c.imgCords.height;
+    const x = c.imgCords.x;
+    const y = c.imgCords.y;
 
-      context.lineWidth = 5;
-      context.strokeStyle = 'red';
-      context.strokeRect(x - width / 2, y - height / 2, width, height);
-    });
-  }
+    context.lineWidth = 5;
+    context.strokeStyle = 'red';
+    context.strokeRect(x - width / 2, y - height / 2, width, height);
+  });
 }
 
-canvas.addEventListener('click', (event) => {
+function loadImage() {
+  image.src = 'world-map.svg';
+  image.onload = () => drawBoundsOnImage();
+}
+
+addTarrifOnClick = event => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
@@ -102,7 +137,9 @@ canvas.addEventListener('click', (event) => {
   cords.forEach(c => {
     addTarrif(c.id, 10);
   });
-});
+}
+
+canvas.addEventListener('click', addTarrifOnClick);
 
 loadCountryButtons = () => {
   countries.forEach(country => {
@@ -133,7 +170,14 @@ addTarrif = (countryId, tarrif) => {
 response = (country) => {
   const response = country.responses?.find(cr => cr.tarrif == country.tarrif);
   if (response) {
-    displayMessageOnTicker('');
+    clearMessageOnTicker();
+    dialog.showModal();
     displayMessageOnTicker(response.response);
   }
 }
+
+const closeButton = document.querySelector("dialog button");
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
