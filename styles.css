@@ -1,40 +1,26 @@
-/* element edges to be removed when finished */
 
 @font-face {
   font-family: 'PixelifySans-Bold';
   src: url(PixelifySans-Bold.ttf) format('woff2');
  }
 
- html {
+html {
   font-family: 'PixelifySans-Bold';
  }
 
- button {
+button {
   font-family: 'PixelifySans-Bold';
  }
 
- header {
+header {
   margin: 0.2rem;
   padding: 0.2rem;
  }
 
- #button-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
- }
-
- #button-container button {
-  margin-left: 0.2rem;
-  margin-top: 0.2rem;
- }
-
-div, main{
-    border: 2px solid red;
-}
-
-/* GUI */
-
-canvas{
+ canvas{
+    padding: 0;
+    margin: auto;
+    display: block;
     max-height: 30em;
     max-width: 40em;
 }
@@ -42,10 +28,37 @@ canvas{
 .game-container{
     display: grid;
     grid-template-columns: 1fr;
+ }
 
+#button-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+ }
+
+#button-container button {
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+  border-radius: 1em;
+  background-color: brown;
+ }
+
+div, main{
+    border: 2px solid red; /* element edges to be removed when finished */
 }
 
+/* GUI */
+
 .game-status{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#days-elapsed-text{
+    font-size: small;
+}
+
+#cash-reserves-text{
+    justify-content: center;
 }
 
 .game-controls{
@@ -59,21 +72,6 @@ canvas{
     margin: 1em;
     padding: 1em;
 }
-
-canvas {
-  padding: 0;
-  margin: auto;
-  display: block;
-}
-.test-ticker-button{
-    margin: 1em;
-    padding: 1em;
-}
-
-#id {
-
-}
-
 
 @media screen {
     * {

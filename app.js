@@ -65,7 +65,9 @@ let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
       { tarrif: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
       { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
       { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
-    ] },
+    ],
+    flagImage: 'flags/flagImageChina.png' 
+  },
   { id: 3, name: 'EU', tarrif: 0, 
     imgCords: { x: 580, y: 350, width: 120, height: 200 } },
   { id: 4, name: 'Mexico', tarrif: 0,
