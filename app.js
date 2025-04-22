@@ -29,8 +29,6 @@ processQueue = () => {
   isDisplaying = true;
   let i = 0;
   const outputMessage = messageQueue.shift();
-  
-  console.log('outputMessage', outputMessage)
 
   showCharacter = () => {
     if (i < outputMessage.length && isDisplaying) {
