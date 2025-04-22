@@ -58,7 +58,16 @@ const chinaId = 2;
 
 let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
   { id: 1, name: 'UK', tarrif: 0, 
-    imgCords: { x: 475, y: 375, width: 50, height: 50 } },
+    imgCords: { x: 475, y: 375, width: 50, height: 50 },
+    responses: [
+      {tarrif: 40, response: 'Blimey!'},
+      {tariff: 50, response: 'My goodness, the special relationship has been shattered!'},
+      {tariff: 80, response: 'Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports'}
+    ],
+    flagImage: '',
+    cashReserves: 0,
+    marketVolatility: 0.05 },
+
   { id: chinaId, name: 'China', tarrif: 0, 
     imgCords: { x: 800, y: 450, width: 300, height: 100 },
     responses: [
@@ -66,8 +75,10 @@ let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
       { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
       { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
     ],
-    flagImage: 'flags/flagImageChina.png' 
-  },
+    flagImage: 'flags/flagImageChina.png',
+    cashReserves: 0,
+    marketVolatility: 0.05},
+    
   { id: 3, name: 'EU', tarrif: 0, 
     imgCords: { x: 580, y: 350, width: 120, height: 200 } },
   { id: 4, name: 'Mexico', tarrif: 0,
