@@ -75,6 +75,7 @@ div, main{
 
 dialog {
   margin: auto;
+  min-width: 50%;
 }
 
 @media screen {
