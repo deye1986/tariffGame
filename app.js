@@ -80,7 +80,8 @@ let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
     marketVolatility: 0.05
   },    
   { id: 3, name: 'EU', tariff: 0, 
-    imgCords: { x: 580, y: 350, width: 120, height: 200 } 
+    imgCords: { x: 580, y: 350, width: 120, height: 200 },
+
   },
   { id: 4, name: 'Mexico', tariff: 0,
     imgCords: { x: 90, y: 550, width: 120, height: 100 }
@@ -181,9 +182,7 @@ addtariff = (country, tariff) => {
 }
 
 tariffResponse = (country) => {
-  console.log('country', country)
   const response = country.responses?.find(cr => cr.tariff == country.tariff);
-  console.log('response', response)
   if (response) {
     clearMessageOnTicker();
     dialog.showModal();
@@ -198,6 +197,5 @@ document.getElementById("dialog-close").addEventListener("click", () => {
 
 save = () => {
   const data = JSON.stringify(countries);
-  console.log('saving', data)
   localStorage.setItem(countryItem, data);
 }
