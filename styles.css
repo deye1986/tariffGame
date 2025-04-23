@@ -23,6 +23,7 @@ header {
     display: block;
     max-height: 30em;
     max-width: 40em;
+    margin-top: 1rem;
 }
 
 .game-container{
@@ -39,14 +40,8 @@ header {
   margin-left: 0.2rem;
   margin-top: 0.2rem;
   border-radius: 1em;
-  background-color: brown;
+  background-color: lightblue;
  }
-
-div, main{
-    border: 2px solid red; /* element edges to be removed when finished */
-}
-
-/* GUI */
 
 .game-status{
     display: grid;
@@ -76,6 +71,8 @@ div, main{
 dialog {
   margin: auto;
   min-width: 50%;
+  max-width: 50%;
+  min-height: 30%;
 }
 
 @media screen {

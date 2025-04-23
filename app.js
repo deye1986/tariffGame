@@ -57,7 +57,10 @@ const countryItem = 'countries';
 const chinaId = 2;
 
 let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
-  { id: 1, name: 'UK', tariff: 0, 
+  { 
+    id: 1, 
+    name: 'UK', 
+    tariff: 0, 
     imgCords: { x: 475, y: 375, width: 50, height: 50 },
     responses: [
       { tariff: 40, response: 'Blimey!' },
@@ -66,14 +69,15 @@ let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
     ],
     flagImage: '',
     cashReserves: 0,
-    marketVolatility: 0.05 },
-
+    marketVolatility: 0.05 
+  },
   { id: chinaId, name: 'China', tariff: 0, 
     imgCords: { x: 800, y: 450, width: 300, height: 100 },
     responses: [
       { tariff: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
       { tariff: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
-      { tariff: 100, response: "We don't care America, you need us more than we need you!" }
+      { tariff: 100, response: "We don't care America, you need us more than we need you!" },
+      { tariff: 120, response: "We are now applying a tarrif back on you for the same rate America!" }
     ],
     flagImage: 'flags/flagImageChina.png',
     cashReserves: 0,
@@ -81,13 +85,23 @@ let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
   },    
   { id: 3, name: 'EU', tariff: 0, 
     imgCords: { x: 580, y: 350, width: 120, height: 200 },
-
+    responses: [
+      { tariff: 30, response: "Don't be stupid America! We will need you to calm down before the next meeting" },
+      { tariff: 60, response: 'We will replace what we buy off you from China if you carry on America' }
+    ]
   },
   { id: 4, name: 'Mexico', tariff: 0,
-    imgCords: { x: 90, y: 550, width: 120, height: 100 }
+    imgCords: { x: 90, y: 550, width: 120, height: 100 },
+    responses: [
+      { tariff: 20, response: "Hey gringo, don't be like that. You know we have a special relationship" }
+    ]
   },
   { id: 5, name: 'Latin America', tariff: 0,
-    imgCords: { x: 250, y: 700, width: 200, height: 200 }
+    imgCords: { x: 250, y: 700, width: 200, height: 200 },
+    responses: [
+      { tariff: 20, response: 'Well this is no surprise at all' },
+      { tariff: 40, response: 'Oh we are so through with this, we arent giving you any Canals, stop trying to bully us' }
+    ]
   },
   { id: 6, name: 'Africa', tariff: 0,
     imgCords: { x: 580, y: 600, width: 300, height: 300 }
