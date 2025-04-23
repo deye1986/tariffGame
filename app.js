@@ -57,49 +57,50 @@ const countryItem = 'countries';
 const chinaId = 2;
 
 let countries = JSON.parse(localStorage.getItem(countryItem)) ?? [
-  { id: 1, name: 'UK', tarrif: 0, 
+  { id: 1, name: 'UK', tariff: 0, 
     imgCords: { x: 475, y: 375, width: 50, height: 50 },
     responses: [
-      {tarrif: 40, response: 'Blimey!'},
-      {tariff: 50, response: 'My goodness, the special relationship has been shattered!'},
-      {tariff: 80, response: 'Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports'}
+      { tariff: 40, response: 'Blimey!' },
+      { tariff: 50, response: 'My goodness, the special relationship has been shattered!' },
+      { tariff: 80, response: 'Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports' }
     ],
     flagImage: '',
     cashReserves: 0,
     marketVolatility: 0.05 },
 
-  { id: chinaId, name: 'China', tarrif: 0, 
+  { id: chinaId, name: 'China', tariff: 0, 
     imgCords: { x: 800, y: 450, width: 300, height: 100 },
     responses: [
-      { tarrif: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
-      { tarrif: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
-      { tarrif: 100, response: "We don't care America, you need us more than we need you!" }
+      { tariff: 40, response: 'Oh you better not you god damn America, we will not be bullied!' },
+      { tariff: 60, response: 'Oh no, not cool America, we will sell your bonds if you carry on' },
+      { tariff: 100, response: "We don't care America, you need us more than we need you!" }
     ],
     flagImage: 'flags/flagImageChina.png',
     cashReserves: 0,
-    marketVolatility: 0.05},
-    
-  { id: 3, name: 'EU', tarrif: 0, 
-    imgCords: { x: 580, y: 350, width: 120, height: 200 } },
-  { id: 4, name: 'Mexico', tarrif: 0,
+    marketVolatility: 0.05
+  },    
+  { id: 3, name: 'EU', tariff: 0, 
+    imgCords: { x: 580, y: 350, width: 120, height: 200 } 
+  },
+  { id: 4, name: 'Mexico', tariff: 0,
     imgCords: { x: 90, y: 550, width: 120, height: 100 }
   },
-  { id: 5, name: 'Latin America', tarrif: 0,
+  { id: 5, name: 'Latin America', tariff: 0,
     imgCords: { x: 250, y: 700, width: 200, height: 200 }
   },
-  { id: 6, name: 'Africa', tarrif: 0,
+  { id: 6, name: 'Africa', tariff: 0,
     imgCords: { x: 580, y: 600, width: 300, height: 300 }
   },
-  { id: 7, name: 'Canada', tarrif: 0,
+  { id: 7, name: 'Canada', tariff: 0,
     imgCords: { x: 100, y: 280, width: 200, height: 250 }
   },
-  { id: 8, name: 'Russia', tarrif: 0,
+  { id: 8, name: 'Russia', tariff: 0,
     imgCords: { x: 800, y: 300, width: 300, height: 180 }
   },
-  { id: 9, name: 'Asia', tarrif: 0,
+  { id: 9, name: 'Asia', tariff: 0,
     imgCords: { x: 850, y: 580, width: 200, height: 150 }
   },
-  { id: 10, name: 'Australia', tarrif: 0,
+  { id: 10, name: 'Australia', tariff: 0,
     imgCords: { x: 970, y: 730, width: 100, height: 100 }
   }
 ];
@@ -134,7 +135,7 @@ loadImage = () => {
 
 loadImage();
 
-addTarrifOnClick = event => {
+addtariffOnClick = event => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
@@ -149,17 +150,17 @@ addTarrifOnClick = event => {
     && y >= (c.imgCords.y - c.imgCords.height / 2)
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
-    country.forEach(c => addTarrif(c, 10));
+    country.forEach(c => addtariff(c, 10));
 }
 
-canvas.addEventListener('click', addTarrifOnClick);
+canvas.addEventListener('click', addtariffOnClick);
 
 loadCountryButtons = () => {
   countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
-    button.textContent = country.name + ' ' + country.tarrif;
-    button.addEventListener('click', () => addTarrif(country, 10)); 
+    button.textContent = country.name + ' ' + country.tariff;
+    button.addEventListener('click', () => addtariff(country, 10)); 
     container.appendChild(button); 
   });
 }
@@ -171,16 +172,18 @@ removeCountryButtons = () => {
 
 loadCountryButtons();
 
-addTarrif = (country, tarrif) => {
-  country.tarrif = country.tarrif + tarrif;
+addtariff = (country, tariff) => {
+  country.tariff = country.tariff + tariff;
   countries = countries.map(c => c.id === country.id ? country : c);
   removeCountryButtons();
   loadCountryButtons();
-  tarrifResponse(country);
+  tariffResponse(country);
 }
 
-tarrifResponse = (country) => {
-  const response = country.responses?.find(cr => cr.tarrif == country.tarrif);
+tariffResponse = (country) => {
+  console.log('country', country)
+  const response = country.responses?.find(cr => cr.tariff == country.tariff);
+  console.log('response', response)
   if (response) {
     clearMessageOnTicker();
     dialog.showModal();
