@@ -142,14 +142,14 @@ addTarrifOnClick = event => {
   const x = (event.clientX - rect.left) * scaleX;
   const y = (event.clientY - rect.top) * scaleY;
 
-  const countries = countries.filter(
+  const country = countries.filter(
     c => c.imgCords != null
     && x >= (c.imgCords.x - c.imgCords.width / 2)
     && x <= (c.imgCords.x + c.imgCords.width / 2)
     && y >= (c.imgCords.y - c.imgCords.height / 2)
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
-    countries.forEach(c => addTarrif(c, 10));
+    country.forEach(c => addTarrif(c, 10));
 }
 
 canvas.addEventListener('click', addTarrifOnClick);
