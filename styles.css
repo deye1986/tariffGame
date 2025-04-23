@@ -73,6 +73,10 @@ div, main{
     padding: 1em;
 }
 
+dialog {
+  margin: auto;
+}
+
 @media screen {
     * {
         margin: 0;
