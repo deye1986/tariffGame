@@ -144,11 +144,18 @@ addtariff = (country, tariff) => {
   tariffResponse(country);
 }
 
+const dialogImg = document.getElementById('dialog-img');
+
 tariffResponse = (country) => {
   const response = country.responses?.find(cr => cr.tariff == country.tariff);
+  
   if (response) {
     clearMessageOnTicker();
     dialog.showModal();
+    if (country.flagImage) {
+      dialogImg.src = country.flagImage;
+    }
+    
     displayMessageOnTicker(response.response);
   }
 }

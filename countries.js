@@ -51,31 +51,44 @@ const defaultCountries = [
     "responses": [
       { "tariff": 20, "response": "Well this is no surprise at all" },
       { "tariff": 40, "response": "Oh we are so through with this, we arent giving you any Canals, stop trying to bully us" }
-    ]
+    ],
+    "flagImage": ""
   },
   { "id": 6, 
     "name": "Africa", 
     "tariff": 0,
-    "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 }
+    "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 },
+    "responses": [
+      { "tarrif": 20, "response": "Why do you do this?" },
+      { "tariff": 50, "response": "What is going on Trump?" }
+    ],
+    "flagImage": ""
   },
   { "id: 8, ": 7, 
     "name": "Canada", 
     "tariff": 0,
-    "imgCords": { "x": 100, "y": 280, "width": 200, "height": 250 }
+    "imgCords": { "x": 100, "y": 280, "width": 200, "height": 250 },
+    "flagImage": ""
   },
   { "id": 8, 
     "name": "Russia", 
     "tariff": 0,
-    "imgCords": { "x": 800, "y": 300, "width": 300, "height": 180 }
+    "imgCords": { "x": 800, "y": 300, "width": 300, "height": 180 },
+    "flagImage": "flags/flagImageRussia.png",
+    "responses": [
+      { "tariff": 10, "response": "Testy" }
+    ]
   },
   { "id": 9, 
     "name": "Asia", 
     "tariff": 0,
-    "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 }
+    "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 },
+    "flagImage": ""
   },
   { "id": 10, 
     "name": "Australia", 
     "tariff": 0,
-    "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 }
+    "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
+    "flagImage": ""
   }
 ]
