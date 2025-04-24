@@ -11,22 +11,26 @@
 </head>
 <body>
     <header>
-        President Trumps Tariff Controls
-      <button onclick="playTime = setInterval(counter, 1000)" 
-        id="start-game-button" type="button">
-        Start
-      </button>
+        Trumps Tariff's
     </header>
-    <div class="game-status">
-      <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span> Cash Reserves:
-      <span id="cash-reserves-text">$******</span></p>
-    </div>
-    <nav>
-
-    </nav>
     <main class="game-container">
+      <div class="game-status">
+        <div>
+          <button onclick="playTime = setInterval(counter, 1000)" 
+          id="start-game-button" type="button">
+          Start
+        </button>
+        </div>
+        <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span> Cash Reserves:
+        <span id="cash-reserves-text">$******</span></p>
+        
+      </div>
         <div class="game-controls">
             <div id="button-container"></div>
+        </div>
+
+        <div id="economic-status-bar">
+          <p id="economic-status-message">The economy is all good</p>
         </div>
 
         <div class="image viewer">

@@ -62,6 +62,13 @@ header {
     margin-top: 1rem;
 }
 
+#economic-status-message {
+  background-color: green;
+    color: #FFF;
+    text-align: center;
+    padding: 1rem;
+}
+
 /*  buttons */
 
 .start-game-button{

@@ -20,6 +20,19 @@ function displayMessageOnTicker(outputMessage) {
 
 const ticker = document.getElementById("game-ticker");
 
+const economicStatuses = [
+  { min: 0, max: 100, message: 'The economy is all good', backgroundColour: 'green' },
+  { min: 101, max: 400, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'orange' },
+  { min: 401, max: 1000, message: "Mr Preseident, I thought you knew to never go full retard", backgroundColour: 'red' }
+];
+
+const statusMessage = document.getElementById('economic-status-message');
+
+updateEconomicStatus = (status) => {
+  statusMessage.innerText = status.message;
+  statusMessage.style.backgroundColor = status.backgroundColour;
+}
+
 processQueue = () => {
   if (messageQueue.length === 0) {
     isDisplaying = false;
@@ -154,11 +167,27 @@ tariffResponse = (country) => {
     dialog.showModal();
     if (country.flagImage) {
       dialogImg.src = country.flagImage;
+    } else {
+      dialogImg.src = '';
     }
+    dialogImg.alt = country.name;
     
     displayMessageOnTicker(response.response);
   }
+
+  const allTarrifs = calculateAllTarrifs();
+
+  const status = economicStatuses.find(s => s.min <= allTarrifs
+    && s.max >= allTarrifs);
+
+    console.log('allTarrifs', allTarrifs);
+
+  if (status && status.message != statusMessage.innerText) {
+    updateEconomicStatus(status);
+  }
 }
+
+calculateAllTarrifs = () => countries.reduce((sum, item) => sum + item.tariff, 0);
 
 document.getElementById("dialog-close").addEventListener("click", () => {
   dialog.close();
