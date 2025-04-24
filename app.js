@@ -71,16 +71,32 @@ const chinaId = 2;
 
 let countries;
 
-loadCountries();
+calculateAllTarrifs = () => countries.reduce((sum, item) => sum + item.tariff, 0);
 
-async function loadCountries() {
+updateStatus = () => {
+  const allTarrifs = calculateAllTarrifs();
+
+  const status = economicStatuses.find(s => s.min <= allTarrifs
+    && s.max >= allTarrifs);
+
+  if (status && status.message != statusMessage.innerText) {
+    updateEconomicStatus(status);
+  }
+}
+
+
+loadCountries = () => {
   let jsonCountries = JSON.parse(localStorage.getItem(countryItem));
   if (!jsonCountries) {
     jsonCountries = defaultCountries;
   }
   
   countries = jsonCountries;
+  updateStatus();
 }
+
+
+loadCountries();
 
 const container = document.getElementById('button-container');
 const canvas = document.getElementById('viewport'),
@@ -175,19 +191,9 @@ tariffResponse = (country) => {
     displayMessageOnTicker(response.response);
   }
 
-  const allTarrifs = calculateAllTarrifs();
-
-  const status = economicStatuses.find(s => s.min <= allTarrifs
-    && s.max >= allTarrifs);
-
-    console.log('allTarrifs', allTarrifs);
-
-  if (status && status.message != statusMessage.innerText) {
-    updateEconomicStatus(status);
-  }
+  updateStatus();
 }
 
-calculateAllTarrifs = () => countries.reduce((sum, item) => sum + item.tariff, 0);
 
 document.getElementById("dialog-close").addEventListener("click", () => {
   dialog.close();
