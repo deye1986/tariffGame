@@ -45,7 +45,7 @@ const defaultCountries = [
     ]
   },
   { "id": 5, 
-    "name": "Latin America", 
+    "name": "Latin America", // use image for south america
     "tariff": 0,
     "imgCords": { "x": 250, "y": 700, "width": 200, "height": 200 },
     "responses": [
