@@ -10,6 +10,7 @@ html {
 
 button {
   font-family: 'PixelifySans-Bold';
+  padding: 1rem;
  }
 
 header {
@@ -37,8 +38,7 @@ header {
  }
 
 #button-container button {
-  margin-left: 0.2rem;
-  margin-top: 0.2rem;
+  margin: 0.2rem;
   border-radius: 1em;
   background-color: lightblue;
  }
@@ -59,6 +59,7 @@ header {
 .game-controls{
     border-radius: 30em 60em;
     max-height: 10em;
+    margin-top: 1rem;
 }
 
 /*  buttons */
