@@ -23,7 +23,7 @@ const defaultCountries = [
       { "tariff": 100, "response": "We don't care America, you need us more than we need you!" },
       { "tariff": 120, "response": "We are now applying a tarrif back on you for the same rate America!" }
     ],
-    "flagImage": "flags/flagImageChina.png",
+    "flagImage": "flags/flagImageChina.svg",
     "cashReserves": 0,
     "marketVolatility": 0.05
   },    
@@ -41,18 +41,19 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 90, "y": 550, "width": 120, "height": 100 },
     "responses": [
-      { "tariff": 20, "response": "Hey gringo, don't be like that. You know we have a special relationship" }
-    ]
+      { "tariff": 20, "response": "Hey gringo, don't be like that. You know we have a good thing going on" }
+    ],
+    "flagImage": "flags/flagImageMexico.svg"
   },
   { "id": 5, 
-    "name": "Latin America", // use image for south america
+    "name": "South America",
     "tariff": 0,
     "imgCords": { "x": 250, "y": 700, "width": 200, "height": 200 },
     "responses": [
       { "tariff": 20, "response": "Well this is no surprise at all" },
       { "tariff": 40, "response": "Oh we are so through with this, we arent giving you any Canals, stop trying to bully us" }
     ],
-    "flagImage": ""
+    "flagImage": "flags/flagImageSouthAmerica.svg"
   },
   { "id": 6, 
     "name": "Africa", 
