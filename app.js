@@ -143,7 +143,7 @@ showTooltipMouseOver = event => {
       tooltip.style.display = 'block';
       tooltip.style.left = event.pageX + 'px';
       tooltip.style.top = event.pageY + 'px';
-      tooltip.textContent = country.name + ' Tariff: ' + country.tariff;
+      tooltip.innerHTML = country.name + ' <br/>Tariff: ' + country.tariff;
     } else {
       tooltip.style.display = 'none';
     }

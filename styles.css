@@ -97,8 +97,7 @@ dialog {
   margin: auto;
   min-width: 50%;
   max-width: 50%;
-  min-height: 30%;
-  border-radius: 1.25rem;
+  min-height: 20%;
   position: relative;
   padding: 20px;
   border: 1px solid #ccc;
@@ -124,6 +123,16 @@ dialog {
   display: none;
   pointer-events: none;
   border: 1px solid black;
+}
+
+.dialog-btn-options {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.dialog-btn-options button {
+  margin: 0.1rem;
 }
 
 /* Mobile and tablet screens */
@@ -154,6 +163,10 @@ dialog {
         display: flex;
         grid-template-columns: auto auto auto auto auto auto;
         flex-wrap: wrap;
+    }
+
+    #button-container button {
+      width: 30%;
     }
 
     canvas {
