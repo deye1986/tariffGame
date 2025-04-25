@@ -110,13 +110,15 @@ dialog {
   padding:0.1rem;
 }
 
-
-#close-dialog-box-image {
-    margin: 1px;
-    padding: 1px;
-    scale: 24%;   
+#tooltip {
+  position: absolute;
+  background-color: #FFF;
+  color: #000;
+  padding: 2rem;
+  border-radius: 3px;
+  display: none;
+  pointer-events: none;
 }
-
 
 /* Mobile and tablet screens */
 
@@ -150,7 +152,6 @@ dialog {
     }
 
     #save-button {
-        padding: 1px;
         width: auto;
         height: 70%;
     }

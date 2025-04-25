@@ -21,9 +21,9 @@ function displayMessageOnTicker(outputMessage) {
 const ticker = document.getElementById("game-ticker");
 
 const economicStatuses = [
-  { min: 0, max: 100, message: 'The economy is all good', backgroundColour: 'green' },
-  { min: 101, max: 400, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'orange' },
-  { min: 401, max: 1000, message: "Mr Preseident, I thought you knew to never go full retard", backgroundColour: 'red' }
+  { min: 0, max: 99, message: 'The economy is all good', backgroundColour: 'green' },
+  { min: 100, max: 399, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'orange' },
+  { min: 400, max: 9999, message: "Mr Preseident, I thought you knew to never go full retard", backgroundColour: 'red' }
 ];
 
 const statusMessage = document.getElementById('economic-status-message');
@@ -212,3 +212,31 @@ save = () => {
   const data = JSON.stringify(countries);
   localStorage.setItem(countryItem, data);
 }
+
+const tooltip = document.getElementById('tooltip');
+
+canvas.addEventListener('mousemove', (event) => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  const x = (event.clientX - rect.left) * scaleX;
+  const y = (event.clientY - rect.top) * scaleY;
+
+  const country = countries.find(
+    c => c.imgCords != null
+    && x >= (c.imgCords.x - c.imgCords.width / 2)
+    && x <= (c.imgCords.x + c.imgCords.width / 2)
+    && y >= (c.imgCords.y - c.imgCords.height / 2)
+    && y <= (c.imgCords.y + c.imgCords.height / 2));
+
+    // Check if the mouse is over the rectangle
+    if (country) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = event.pageX + 'px';
+      tooltip.style.top = event.pageY + 'px';
+      tooltip.textContent = country.name + ' Tariff: ' + country.tariff;
+    } else {
+      tooltip.style.display = 'none';
+    }
+});

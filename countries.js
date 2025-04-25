@@ -9,7 +9,7 @@ const defaultCountries = [
       { "tariff": 50, "response": "My goodness, the special relationship has been shattered!" },
       { "tariff": 80, "response": "Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports" }
     ],
-    "flagImage": "",
+    "flagImage": "flags/flagImageUnionFlag.svg",
     "cashReserves": 0,
     "marketVolatility": 0.05 
   },
@@ -35,7 +35,8 @@ const defaultCountries = [
     "responses": [
       { "tariff": 30, "response": "Don't be stupid America! We will need you to calm down before the next meeting" },
       { "tariff": 60, "response": "We will replace what we buy off you from China if you carry on America" }
-    ]
+    ],
+    "flagImage": "flags/flagImageEurope.svg"
   },
   { "id": 4, 
     "name": "Mexico", 
@@ -64,13 +65,13 @@ const defaultCountries = [
       { "tariff": 20, "response": "Why do you do this?" },
       { "tariff": 50, "response": "What is going on Trump?" }
     ],
-    "flagImage": ""
+    "flagImage": "flags/flagImageAfrica.svg"
   },
   { "id: 8, ": 7, 
     "name": "Canada", 
     "tariff": 0,
     "imgCords": { "x": 100, "y": 280, "width": 200, "height": 250 },
-    "flagImage": "",
+    "flagImage": "flags/flagImageCanada.svg",
     "responses": [
       { "tariff": 10, "response": "We don't need your trade, Trump." }
     ]
@@ -88,7 +89,7 @@ const defaultCountries = [
     "name": "Asia", 
     "tariff": 0,
     "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 },
-    "flagImage": "",
+    "flagImage": "flags/flagImageAsiaRegion.svg",
     "responses":[
       { "tariff": 20, "response": "You need our cheap electronics, and clothes this doesn't make sense." }
     ]
@@ -97,7 +98,7 @@ const defaultCountries = [
     "name": "Australia", 
     "tariff": 0,
     "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
-    "flagImage": "",
+    "flagImage": "flags/flagImageAustralia.SVG",
     "responses": [
       { "tariff": 10, "response": "We will just ignore that for now, good one mate." }
     ]
