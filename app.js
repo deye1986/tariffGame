@@ -5,7 +5,7 @@ counter = () => {
     document.getElementById("start-game-button").disabled = true;
 }
 
-const dialog = document.querySelector("dialog");
+const dialog = document.getElementById("countries-responses-dialog");
 
 const typingSpeed = 50;
 let messageQueue = [];
@@ -138,7 +138,6 @@ showTooltipMouseOver = event => {
     && y >= (c.imgCords.y - c.imgCords.height / 2)
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
-    // Check if the mouse is over the rectangle
     if (country) {
       tooltip.style.display = 'block';
       tooltip.style.left = event.pageX + 'px';
@@ -148,6 +147,8 @@ showTooltipMouseOver = event => {
       tooltip.style.display = 'none';
     }
 }
+
+canvas.addEventListener('mousemove', showTooltipMouseOver);
 
 addtariffOnClick = event => {
   const rect = canvas.getBoundingClientRect();
@@ -224,5 +225,3 @@ save = () => {
   const data = JSON.stringify(countries);
   localStorage.setItem(countryItem, data);
 }
-
-canvas.addEventListener('mousemove', showTooltipMouseOver);
