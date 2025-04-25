@@ -22,13 +22,18 @@ startGame = () => {
 }
 
 setTimer = (time) => {
-  if (time > 0) {
-    startGame();
-  }
   gameTimer.innerHTML = time;
 }
 
-setTimer(gameTime);
+initGameTimer = (time) => {
+  if (time > 0) {
+    startGame();
+  }
+
+  setTimer(time);
+}
+
+initGameTimer(gameTime);
 
 const countriesDialog = document.getElementById("countries-responses-dialog");
 
