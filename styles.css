@@ -41,17 +41,15 @@ header {
 
 #button-container button {
   margin: 0.2rem;
- }
+}
 
 .game-status{
-    display: flex;
-    grid-template-columns: wrap;
+  display: flex;
+  grid-template-columns: wrap;
 }
 
 #days-elapsed-text{
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: small;
+  text-align: center;
 }
 
 #cash-reserves-text{

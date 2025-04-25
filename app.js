@@ -1,9 +1,34 @@
-let gameTime = 0;
+const gameTimeItem = 'gameTime';
+const gt = JSON.parse(localStorage.getItem(gameTimeItem));
+
+const gameTimer = document.getElementById("game-timer");
+
+console.log('test', gt)
+
+let gameTime;
+if (!gt) {
+  gameTime = 0;
+} else {
+  gameTime = gt;
+}
 
 counter = () => {
-    document.getElementById("game-timer").innerHTML = ++gameTime;
-    document.getElementById("start-game-button").disabled = true;
+  setTimer(++gameTime);
+  document.getElementById("start-game-button").disabled = true;
 }
+
+startGame = () => {
+  setInterval(counter, 1000);
+}
+
+setTimer = (time) => {
+  if (time > 0) {
+    startGame();
+  }
+  gameTimer.innerHTML = time;
+}
+
+setTimer(gameTime);
 
 const countriesDialog = document.getElementById("countries-responses-dialog");
 
@@ -151,7 +176,7 @@ showTooltipMouseOver = event => {
 
 canvas.addEventListener('mousemove', showTooltipMouseOver);
 
-addtariffOnClick = event => {
+addTariffOnClick = event => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
@@ -166,18 +191,18 @@ addtariffOnClick = event => {
     && y >= (c.imgCords.y - c.imgCords.height / 2)
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
-    country.forEach(c => addtariff(c, 10));
+    country.forEach(c => addTariff(c, 10));
     showTooltipMouseOver(event);
 }
 
-canvas.addEventListener('click', addtariffOnClick);
+canvas.addEventListener('click', addTariffOnClick);
 
 loadCountryButtons = () => {
   countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.textContent = country.name + ' ' + country.tariff;
-    button.addEventListener('click', () => addtariff(country, 10)); 
+    button.addEventListener('click', () => addTariff(country, 10)); 
     container.appendChild(button); 
   });
 }
@@ -189,7 +214,10 @@ removeCountryButtons = () => {
 
 loadCountryButtons();
 
-addtariff = (country, tariff) => {
+addTariff = (country, tariff) => {
+  if (gameTime == 0) {
+    startGame();
+  }
   country.tariff = country.tariff + tariff;
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
@@ -224,7 +252,10 @@ closeCountriesDialog = () => {
 
 save = () => {
   const data = JSON.stringify(countries);
+  const gameTimeData = JSON.stringify(gameTime);
+  
   localStorage.setItem(countryItem, data);
+  localStorage.setItem(gameTimeItem, gameTime);
 }
 
 const resetDialog = document.getElementById('reset-tariff-dialog');
