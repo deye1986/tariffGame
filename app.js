@@ -114,26 +114,9 @@ context = canvas.getContext('2d');
 
 const image = new Image();
 
-drawBoundsOnImage = () => {
-  context.drawImage(image, 0, 0, image.width, image.height);
-
-  const cords = countries.filter(c => c.imgCords != null);
-
-  cords.forEach(c => {
-    const width = c.imgCords.width;
-    const height = c.imgCords.height;
-    const x = c.imgCords.x;
-    const y = c.imgCords.y;
-
-    context.lineWidth = 5;
-    context.strokeStyle = 'red';
-    context.strokeRect(x - width / 2, y - height / 2, width, height);
-  });
-}
-
 loadImage = () => {
   image.src = 'world-map.svg';
-  image.onload = () => drawBoundsOnImage();
+  image.onload = () => context.drawImage(image, 0, 0, image.width, image.height);
 }
 
 loadImage();
