@@ -23,8 +23,7 @@ header {
     padding: 0;
     margin: auto;
     display: block;
-    max-height: 30em;
-    max-width: 40em;
+    max-height: 35rem;
     margin-top: 1rem;
 }
 
@@ -122,14 +121,18 @@ dialog {
   background-color: #FFF;
   color: #000;
   padding: 2rem;
-  border-radius: 3px;
   display: none;
   pointer-events: none;
+  border: 1px solid black;
 }
 
 /* Mobile and tablet screens */
 
 @media only screen and (max-width: 550px){
+
+  #tooltip {
+    display: none!important;
+  }
 
     * {
         margin: 0;
