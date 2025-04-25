@@ -14,40 +14,42 @@
         Trumps Tariff's
     </header>
     <main class="game-container">
-      <div class="game-status">
-        <div>
-          <button onclick="playTime = setInterval(counter, 1000)" 
-          id="start-game-button" type="button">
-          Start
-        </button>
-        </div>
+
+      <div class="game-status">        
+        <button onclick="playTime = setInterval(counter, 1000)" 
+        id="start-game-button" type="button">Start</button>
+
         <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span> Cash Reserves:
-        <span id="cash-reserves-text">$******</span></p>
-        
+        <span id="cash-reserves-text">$******</span>
+        </p>
       </div>
-        <div class="game-controls">
-            <div id="button-container"></div>
-        </div>
 
-        <div id="economic-status-bar">
-          <p id="economic-status-message">The economy is all good</p>
-        </div>
-        
-        <canvas width="1024" height="1024" id="viewport"></canvas>        
+      <div id="economic-status-bar">
+        <p id="economic-status-message">The economy is all good</p>
+      </div>
 
-        <dialog>
-          <button id="dialog-close" autofocus type="button">Close</button>
-          <div id="dialog-pfp">
-            <img id="dialog-img" src="" alt="Image of Flag" />
-          </div>
-          <p id="game-ticker"></p>
-        </dialog>
+      <div class="game-controls">
+        <div id="button-container"></div>
+      </div>
+    
+      <canvas width="1024" height="1024" id="viewport"></canvas>        
 
-        <div>
-          <button id="save-button" type="button" onclick="save()">Save</button>
+      <dialog>
+        <button id="dialog-close" autofocus type="button">Close</button>
+        <div id="dialog-pfp">
+          <img id="dialog-img" src="" alt="Image of Flag" />
         </div>
+        <p id="game-ticker"></p>
+      </dialog>
+
+      <div>
+        <button id="save-button" type="button" onclick="save()">Save</button>
+        <button id="art-of-the-deal-button">Art of the deal</button>
+      </div>
 
     </main>
+
     <footer></footer>
+
 </body>
 </html>

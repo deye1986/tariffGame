@@ -1,5 +1,8 @@
 let gameTime = 0;
 
+// disabled until required
+document.getElementById("art-of-the-deal-button").disabled = true;
+
 counter = () => {
     document.getElementById("game-timer").innerHTML = ++gameTime;
     document.getElementById("start-game-button").disabled = true;

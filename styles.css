@@ -30,25 +30,30 @@ header {
 .game-container{
     display: grid;
     grid-template-columns: 1fr;
+    flex-wrap: wrap;
  }
 
 #button-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+  flex-wrap: wrap;
  }
 
 #button-container button {
   margin: 0.2rem;
   border-radius: 1em;
   background-color: lightblue;
+  cursor: pointer;
  }
 
 .game-status{
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    grid-template-columns: wrap;
 }
 
 #days-elapsed-text{
+    padding-left: 1em;
+    padding-right: 1em;
     font-size: small;
 }
 
@@ -57,9 +62,8 @@ header {
 }
 
 .game-controls{
-    border-radius: 30em 60em;
     max-height: 10em;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
 }
 
 #economic-status-message {
@@ -74,6 +78,13 @@ header {
 .start-game-button{
     margin: 1em;
     padding: 1em;
+    max-width: 10em;
+}
+
+#art-of-the-deal-button{
+    margin: 1em;
+    padding: 1em;
+    max-width: 10em;
 }
 
 dialog {
@@ -82,6 +93,7 @@ dialog {
   max-width: 50%;
   min-height: 30%;
 }
+
 
 
 /* Mobile and tablet screens */
@@ -132,8 +144,10 @@ dialog {
         padding: 2px;
     }
 
-    #economic-status-message {
-        width: fit-content;
+    #economic-status-bar {
+        justify-content: center;
+        width: 100%;
+        margin: auto;
         padding: 1px;
     }
 }
