@@ -92,8 +92,14 @@ dialog {
   min-width: 50%;
   max-width: 50%;
   min-height: 30%;
+  border-radius: 1.25em;
 }
 
+#close-dialog-box-image {
+    margin: 1px;
+    padding: 1px;
+    scale: 24%;   
+}
 
 
 /* Mobile and tablet screens */
