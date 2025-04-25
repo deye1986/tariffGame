@@ -113,5 +113,15 @@ const defaultCountries = [
       {"tariff": 10, "response": "Greenland retaliates with matching trade tariff's."},
       {"tariff": 20, "response": "Greenland refuses to allow America to operate data centres in its cold climate"}
     ]
+  },
+  {
+    "id": 12,
+    "name": "South Africa",
+    "tariff": 0,
+    "imgCords": { "x": 600, "y":810, "width": 80, "height": 80 },
+    "flagImage": "flags/flagImageSouthAfrica.svg",
+    "responses": [
+      {"tariff": 20, "response": "We are disapointed to see a 20% tariff applied, is there anything we can do to change your mind sir?"}
+    ]
   }
 ];

@@ -35,7 +35,7 @@ header {
 
 #button-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   flex-wrap: wrap;
  }
 
@@ -75,16 +75,25 @@ header {
 
 /*  buttons */
 
-.start-game-button{
-    margin: 1em;
-    padding: 1em;
-    max-width: 10em;
+#start-game-button{
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 10rem;
+    max-height: 2rem;
+}
+
+#save-button {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 10rem;
+    max-height: 2rem;
 }
 
 #art-of-the-deal-button{
-    margin: 1em;
-    padding: 1em;
-    max-width: 10em;
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 10rem;
+    max-height: 2rem;
 }
 
 dialog {
@@ -122,7 +131,7 @@ dialog {
 
 /* Mobile and tablet screens */
 
-@media only screen and (max-width: 428px){
+@media only screen and (max-width: 550px){
 
     * {
         margin: 0;
@@ -135,8 +144,14 @@ dialog {
         flex-wrap: wrap;
     }
 
+    .game-status{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     #button-container {
         display: flex;
+        grid-template-columns: auto auto auto auto auto auto;
         flex-wrap: wrap;
     }
 
