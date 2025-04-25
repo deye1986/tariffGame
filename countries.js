@@ -118,7 +118,7 @@ const defaultCountries = [
     "id": 12,
     "name": "South Africa",
     "tariff": 0,
-    "imgCords": { "x": 0, "y":0, "width": 80, "height": 80 },
+    "imgCords": { "x": 600, "y":810, "width": 80, "height": 80 },
     "flagImage": "flags/flagImageSouthAfrica.svg",
     "responses": [
       {"tariff": 20, "response": "We are disapointed to see a 20% tariff applied, is there anything we can do to change your mind sir?"}
