@@ -132,9 +132,11 @@ resetCountryButtons = () => {
 
 resetCountries = () => {
   localStorage.removeItem(countryItem);
+  localStorage.removeItem(gameTimeItem);
   loadCountries();
   resetCountryButtons();
   closeResetDialogBox();
+  gameTime = 0;
 }
 
 loadCountries();
