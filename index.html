@@ -16,12 +16,17 @@
     <main class="game-container">
 
       <div class="game-status">        
-        <button onclick="playTime = setInterval(counter, 1000)" 
-        id="start-game-button" type="button">Start</button>
-
-        <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span> Cash Reserves:
-        <span id="cash-reserves-text">$******</span>
-        </p>
+        <div>
+          <button onclick="playTime = setInterval(counter, 1000)" 
+            id="start-game-button" type="button">Start</button>
+          <button id="save-button" type="button" onclick="save()">Save</button>
+          <button id="art-of-the-deal-button" type="button" onclick="resetCountries()">Art of the deal</button>
+        </div>
+        <div>
+          <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span> Cash Reserves:
+            <span id="cash-reserves-text">$******</span>
+          </p>
+        </div>
       </div>
 
       <div id="economic-status-bar">
@@ -42,10 +47,6 @@
         <p id="game-ticker"></p>
       </dialog>
 
-      <div>
-        <button id="save-button" type="button" onclick="save()">Save</button>
-        <button id="art-of-the-deal-button" type="button" onclick="resetCountries()">Art of the deal</button>
-      </div>
       <div id="tooltip"></div>
     </main>
 

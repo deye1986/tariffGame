@@ -121,6 +121,34 @@ loadImage = () => {
 
 loadImage();
 
+const tooltip = document.getElementById('tooltip');
+
+showTooltipMouseOver = event => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  const x = (event.clientX - rect.left) * scaleX;
+  const y = (event.clientY - rect.top) * scaleY;
+
+  const country = countries.find(
+    c => c.imgCords != null
+    && x >= (c.imgCords.x - c.imgCords.width / 2)
+    && x <= (c.imgCords.x + c.imgCords.width / 2)
+    && y >= (c.imgCords.y - c.imgCords.height / 2)
+    && y <= (c.imgCords.y + c.imgCords.height / 2));
+
+    // Check if the mouse is over the rectangle
+    if (country) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = event.pageX + 'px';
+      tooltip.style.top = event.pageY + 'px';
+      tooltip.textContent = country.name + ' Tariff: ' + country.tariff;
+    } else {
+      tooltip.style.display = 'none';
+    }
+}
+
 addtariffOnClick = event => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
@@ -137,6 +165,7 @@ addtariffOnClick = event => {
     && y <= (c.imgCords.y + c.imgCords.height / 2));
 
     country.forEach(c => addtariff(c, 10));
+    showTooltipMouseOver(event);
 }
 
 canvas.addEventListener('click', addtariffOnClick);
@@ -196,30 +225,4 @@ save = () => {
   localStorage.setItem(countryItem, data);
 }
 
-const tooltip = document.getElementById('tooltip');
-
-canvas.addEventListener('mousemove', (event) => {
-  const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-
-  const x = (event.clientX - rect.left) * scaleX;
-  const y = (event.clientY - rect.top) * scaleY;
-
-  const country = countries.find(
-    c => c.imgCords != null
-    && x >= (c.imgCords.x - c.imgCords.width / 2)
-    && x <= (c.imgCords.x + c.imgCords.width / 2)
-    && y >= (c.imgCords.y - c.imgCords.height / 2)
-    && y <= (c.imgCords.y + c.imgCords.height / 2));
-
-    // Check if the mouse is over the rectangle
-    if (country) {
-      tooltip.style.display = 'block';
-      tooltip.style.left = event.pageX + 'px';
-      tooltip.style.top = event.pageY + 'px';
-      tooltip.textContent = country.name + ' Tariff: ' + country.tariff;
-    } else {
-      tooltip.style.display = 'none';
-    }
-});
+canvas.addEventListener('mousemove', showTooltipMouseOver);
