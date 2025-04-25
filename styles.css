@@ -11,6 +11,7 @@ html {
 button {
   font-family: 'PixelifySans-Bold';
   padding: 1rem;
+  cursor: pointer;
  }
 
 header {
@@ -35,15 +36,12 @@ header {
 
 #button-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
   flex-wrap: wrap;
  }
 
 #button-container button {
   margin: 0.2rem;
-  border-radius: 1em;
-  background-color: lightblue;
-  cursor: pointer;
  }
 
 .game-status{

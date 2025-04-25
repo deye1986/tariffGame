@@ -5,7 +5,7 @@ counter = () => {
     document.getElementById("start-game-button").disabled = true;
 }
 
-const dialog = document.getElementById("countries-responses-dialog");
+const countriesDialog = document.getElementById("countries-responses-dialog");
 
 const typingSpeed = 50;
 let messageQueue = [];
@@ -104,6 +104,7 @@ resetCountries = () => {
   localStorage.removeItem(countryItem);
   loadCountries();
   resetCountryButtons();
+  closeResetDialogBox();
 }
 
 loadCountries();
@@ -202,7 +203,7 @@ tariffResponse = (country) => {
   
   if (response) {
     clearMessageOnTicker();
-    dialog.showModal();
+    countriesDialog.showModal();
     if (country.flagImage) {
       dialogImg.src = country.flagImage;
     } else {
@@ -216,12 +217,22 @@ tariffResponse = (country) => {
   updateStatus();
 }
 
-document.getElementById("dialog-close").addEventListener("click", () => {
-  dialog.close();
+closeCountriesDialog = () => {
+  countriesDialog.close();
   clearMessageOnTicker();
-});
+}
 
 save = () => {
   const data = JSON.stringify(countries);
   localStorage.setItem(countryItem, data);
+}
+
+const resetDialog = document.getElementById('reset-tariff-dialog');
+
+showResetDialogBox = () => {
+  resetDialog.showModal();
+}
+
+closeResetDialogBox = () => {
+  resetDialog.close();
 }
