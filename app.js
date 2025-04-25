@@ -1,8 +1,5 @@
 let gameTime = 0;
 
-// disabled until required
-document.getElementById("art-of-the-deal-button").disabled = true;
-
 counter = () => {
     document.getElementById("game-timer").innerHTML = ++gameTime;
     document.getElementById("start-game-button").disabled = true;
@@ -87,17 +84,27 @@ updateStatus = () => {
   }
 }
 
-
 loadCountries = () => {
   let jsonCountries = JSON.parse(localStorage.getItem(countryItem));
   if (!jsonCountries) {
-    jsonCountries = defaultCountries;
+    // This creates a new instance of the defaultCountries (required for the reset)
+    jsonCountries = JSON.parse(JSON.stringify(defaultCountries));
   }
   
   countries = jsonCountries;
   updateStatus();
 }
 
+resetCountryButtons = () => {
+  removeCountryButtons();
+  loadCountryButtons();
+}
+
+resetCountries = () => {
+  localStorage.removeItem(countryItem);
+  loadCountries();
+  resetCountryButtons();
+}
 
 loadCountries();
 
@@ -171,8 +178,7 @@ loadCountryButtons();
 addtariff = (country, tariff) => {
   country.tariff = country.tariff + tariff;
   countries = countries.map(c => c.id === country.id ? country : c);
-  removeCountryButtons();
-  loadCountryButtons();
+  resetCountryButtons();
   tariffResponse(country);
 }
 
@@ -196,7 +202,6 @@ tariffResponse = (country) => {
 
   updateStatus();
 }
-
 
 document.getElementById("dialog-close").addEventListener("click", () => {
   dialog.close();
