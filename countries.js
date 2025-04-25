@@ -102,5 +102,16 @@ const defaultCountries = [
     "responses": [
       { "tariff": 10, "response": "We will just ignore that for now, good one mate." }
     ]
+  },
+  {
+    "id": 11,
+    "name": "Greenland",
+    "tariff": 0,
+    "imgCords": { "x": 200, "y": 180, "width": 350, "height": 250 },
+    "flagImage": "flags/flagImageGreenland.svg",
+    "responses": [
+      {"tariff": 10, "response": "Greenland retaliates with matching trade tariff's."},
+      {"tariff": 20, "response": "Greenland refuses to allow America to operate data centres in its cold climate"}
+    ]
   }
 ];
