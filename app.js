@@ -257,7 +257,6 @@ closeCountriesDialog = () => {
 
 save = () => {
   const data = JSON.stringify(countries);
-  const gameTimeData = JSON.stringify(gameTime);
   
   localStorage.setItem(countryItem, data);
   localStorage.setItem(gameTimeItem, gameTime);
