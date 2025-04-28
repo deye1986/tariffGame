@@ -255,6 +255,7 @@ tariffResponse = (country) => {
 closeCountriesDialog = () => {
   countriesDialog.close();
   clearMessageOnTicker();
+  dialogImg.src = '';
 }
 
 save = () => {
