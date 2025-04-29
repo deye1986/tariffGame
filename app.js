@@ -3,8 +3,6 @@ const gt = JSON.parse(localStorage.getItem(gameTimeItem));
 
 const gameTimer = document.getElementById("game-timer");
 
-console.log('test', gt)
-
 let gameTime;
 if (!gt) {
   gameTime = 0;
@@ -12,13 +10,20 @@ if (!gt) {
   gameTime = gt;
 }
 
+const gameTimerWin = 5;
+
 counter = () => {
   setTimer(++gameTime);
-  document.getElementById("start-game-button").disabled = true;
+  if (gameTime > gameTimerWin
+    && calculateAllTarrifs() <= 0) { 
+      // TODO: Add celeration animations, dialog box, ect.
+      alert('You won!');
+    }
 }
 
 startGame = () => {
   setInterval(counter, 1000);
+  document.getElementById("start-game-button").disabled = true;
 }
 
 setTimer = (time) => {
@@ -156,7 +161,7 @@ loadImage();
 
 const tooltip = document.getElementById('tooltip');
 
-showTooltipMouseOver = event => {
+calculateXAndY = (event) => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
@@ -164,12 +169,18 @@ showTooltipMouseOver = event => {
   const x = (event.clientX - rect.left) * scaleX;
   const y = (event.clientY - rect.top) * scaleY;
 
+  return { x, y };
+}
+
+showTooltipMouseOver = event => {
+  const mouse = calculateXAndY(event);
+
   const country = countries.find(
     c => c.imgCords != null
-    && x >= (c.imgCords.x - c.imgCords.width / 2)
-    && x <= (c.imgCords.x + c.imgCords.width / 2)
-    && y >= (c.imgCords.y - c.imgCords.height / 2)
-    && y <= (c.imgCords.y + c.imgCords.height / 2));
+    && mouse.x >= (c.imgCords.x - c.imgCords.width / 2)
+    && mouse.x <= (c.imgCords.x + c.imgCords.width / 2)
+    && mouse.y >= (c.imgCords.y - c.imgCords.height / 2)
+    && mouse.y <= (c.imgCords.y + c.imgCords.height / 2));
 
     if (country) {
       tooltip.style.display = 'block';
@@ -184,19 +195,14 @@ showTooltipMouseOver = event => {
 canvas.addEventListener('mousemove', showTooltipMouseOver);
 
 addTariffOnClick = event => {
-  const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-
-  const x = (event.clientX - rect.left) * scaleX;
-  const y = (event.clientY - rect.top) * scaleY;
+  const mouse = calculateXAndY(event);
 
   const country = countries.filter(
     c => c.imgCords != null
-    && x >= (c.imgCords.x - c.imgCords.width / 2)
-    && x <= (c.imgCords.x + c.imgCords.width / 2)
-    && y >= (c.imgCords.y - c.imgCords.height / 2)
-    && y <= (c.imgCords.y + c.imgCords.height / 2));
+    && mouse.x >= (c.imgCords.x - c.imgCords.width / 2)
+    && mouse.x <= (c.imgCords.x + c.imgCords.width / 2)
+    && mouse.y >= (c.imgCords.y - c.imgCords.height / 2)
+    && mouse.y <= (c.imgCords.y + c.imgCords.height / 2));
 
     country.forEach(c => addTariff(c, 10));
     showTooltipMouseOver(event);
