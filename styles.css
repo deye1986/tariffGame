@@ -135,7 +135,7 @@ dialog {
 
 /* Mobile and tablet screens */
 
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 590px){
 
   #tooltip {
     display: none!important;
