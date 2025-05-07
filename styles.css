@@ -61,11 +61,29 @@ header {
     margin-top: 0.25rem;
 }
 
-#economic-status-message {
+#economic-status-bar {
   background-color: green;
-    color: #FFF;
-    text-align: center;
-    padding: 1rem;
+  color: #FFF;
+  text-align: center;
+  padding: 1rem;
+}
+
+#economic-status-message {
+  display: inline-block;
+  font-size: 24px;
+  position: relative;
+  animation: moveText 4s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  right: 0;
+}
+
+.marquee {
+  animation: moveText 5s linear infinite; /* Adjust duration as needed */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide text going outside the container */
+  position: absolute; /* Allow positioning outside parent container */
+  right: 0; /* Start position on the right edge */
 }
 
 /*  buttons */
@@ -131,6 +149,15 @@ dialog {
 
 .dialog-btn-options button {
   margin: 0.1rem;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Mobile and tablet screens */

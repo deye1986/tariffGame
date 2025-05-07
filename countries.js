@@ -5,7 +5,8 @@ const defaultCountries = [
     "tariff": 0, 
     "imgCords": { "x": 475, "y": 375, "width": 50, "height": 50 },
     "responses": [
-      { "tariff": 40, "response": "Blimey!" },
+      { "tariff": 10, "response": "I thought we had something special, America" },
+      { "tariff": 40, "response": "Blimey! This isn't what we spoke about in our last meeting" },
       { "tariff": 50, "response": "My goodness, the special relationship has been shattered!" },
       { "tariff": 80, "response": "Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports" }
     ],
@@ -18,6 +19,7 @@ const defaultCountries = [
     "tariff": 0, 
     "imgCords": { "x": 800, "y": 450, "width": 300, "height": 100 },
     "responses": [
+      { "tariff": 10,  "response": "Are you sure you want to play this game, America?"},
       { "tariff": 40,  "response": "Oh you better not you god damn America, we will not be bullied!" },
       { "tariff": 60,  "response": "Oh no, not cool America, we will sell your bonds if you carry on" },
       { "tariff": 100, "response": "We don't care America, you need us more than we need you!" },
