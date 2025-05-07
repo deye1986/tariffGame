@@ -13,7 +13,7 @@ if (!gt) {
   gameTime = gt;
 }
 
-const gameTimerWin = 5;
+const gameTimerWin = 365;
 
 counter = () => {
   setTimer(++gameTime);
@@ -65,10 +65,11 @@ const economicStatuses = [
 ];
 
 const statusMessage = document.getElementById('economic-status-message');
+const statusBar = document.getElementById('economic-status-bar');
 
 updateEconomicStatus = (status) => {
   statusMessage.innerText = status.message;
-  statusMessage.style.backgroundColor = status.backgroundColour;
+  statusBar.style.backgroundColor = status.backgroundColour;
 }
 
 processQueue = () => {
@@ -147,7 +148,6 @@ resetCountries = () => {
   loadCountries();
   resetCountryButtons();
   closeResetDialogBox();
-  gameTime = 0;
   globalMarketVolatility = 0;
 }
 
