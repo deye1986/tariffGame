@@ -123,13 +123,16 @@ updateStatus = () => {
 }
 
 loadCountries = () => {
-  let jsonCountries = JSON.parse(localStorage.getItem(countryItem));
-  if (!jsonCountries) {
-    // This creates a new instance of the defaultCountries (required for the reset)
-    jsonCountries = JSON.parse(JSON.stringify(defaultCountries));
-  }
-  
+  let jsonCountries = JSON.parse(JSON.stringify(defaultCountries));
+
+  const savedCountries = JSON.parse(localStorage.getItem(countryItem));
+
   countries = jsonCountries;
+
+  if (savedCountries) {
+    savedCountries.forEach(country => countries.find(c => c.id == country.id).tariff = country.tariff);
+  }
+
   updateStatus();
 }
 
@@ -270,9 +273,15 @@ closeCountriesDialog = () => {
   dialogImg.src = '';
 }
 
+minCountry = (country) => {
+  return {
+    id: country.id,
+    tariff: country.tariff
+  }
+}
+
 save = () => {
-  const data = JSON.stringify(countries);
-  
+  const data = JSON.stringify(countries.map(minCountry));
   localStorage.setItem(countryItem, data);
   localStorage.setItem(gameTimeItem, gameTime);
 }

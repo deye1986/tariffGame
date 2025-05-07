@@ -77,15 +77,6 @@ header {
   right: 0;
 }
 
-.marquee {
-  animation: moveText 5s linear infinite; /* Adjust duration as needed */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide text going outside the container */
-  position: absolute; /* Allow positioning outside parent container */
-  right: 0; /* Start position on the right edge */
-  display: none;
-}
-
 /*  buttons */
 
 #start-game-button{

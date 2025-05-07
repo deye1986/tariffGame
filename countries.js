@@ -8,11 +8,11 @@ const defaultCountries = [
       { "tariff": 10, "response": "I thought we had something special, America" },
       { "tariff": 40, "response": "Blimey! This isn't what we spoke about in our last meeting" },
       { "tariff": 50, "response": "My goodness, the special relationship has been shattered!" },
-      { "tariff": 80, "response": "Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports" }
+      { "tariff": 80, "response": "Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports" },
+      { "tariff": 100, "response": "We have had enough of you America, we won't be selling you anymore tea, so there!" }
     ],
     "flagImage": "flags/flagImageUnionFlag.svg",
-    "cashReserves": 0,
-    "marketVolatility": 0.05 
+    "cashReserves": 0
   },
   { "id": 2, 
     "name": "China", 
@@ -20,21 +20,22 @@ const defaultCountries = [
     "imgCords": { "x": 800, "y": 450, "width": 300, "height": 100 },
     "responses": [
       { "tariff": 10,  "response": "Are you sure you want to play this game, America?"},
-      { "tariff": 40,  "response": "Oh you better not you god damn America, we will not be bullied!" },
+      { "tariff": 30,  "response": "Oh you better not you god damn America, we will not be bullied!" },
+      { "tariff": 50,  "response": "God damn, America. Do you really want to play this game?" },
       { "tariff": 60,  "response": "Oh no, not cool America, we will sell your bonds if you carry on" },
       { "tariff": 100, "response": "We don't care America, you need us more than we need you!" },
       { "tariff": 120, "response": "We are now applying a tarrif back on you for the same rate America!" },
       { "tariff": 140, "response": "You are only hurting yourself now America, do you like pain?"}
     ],
     "flagImage": "flags/flagImageChina.svg",
-    "cashReserves": 0,
-    "marketVolatility": 0.05
+    "cashReserves": 0
   },    
   { "id": 3, 
     "name": "EU", 
     "tariff": 0, 
     "imgCords": { "x": 580, "y": 350, "width": 120, "height": 200 },
     "responses": [
+      { "tariff": 10, "response": "Don't do anything we wouldn't do!" },
       { "tariff": 30, "response": "Don't be stupid America! We will need you to calm down before the next meeting" },
       { "tariff": 60, "response": "We will replace what we buy off you from China if you carry on America" }
     ],
@@ -45,7 +46,7 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 90, "y": 550, "width": 120, "height": 100 },
     "responses": [
-      { "tariff": 20, "response": "Hey gringo, don't be like that. You know we have a good thing going on" }
+      { "tariff": 10, "response": "Hey gringo, don't be like that. You know we have a good thing going on" }
     ],
     "flagImage": "flags/flagImageMexico.svg"
   },
@@ -69,13 +70,15 @@ const defaultCountries = [
     ],
     "flagImage": "flags/flagImageAfrica.svg"
   },
-  { "id: 8, ": 7, 
+  { "id": 7, 
     "name": "Canada", 
     "tariff": 0,
     "imgCords": { "x": 100, "y": 280, "width": 200, "height": 250 },
     "flagImage": "flags/flagImageCanada.svg",
     "responses": [
-      { "tariff": 10, "response": "We don't need your trade, Trump." }
+      { "tariff": 10, "response": "We don't need your trade, Trump." },
+      { "tariff": 20, "response": "We won't be playing your silly games America" },
+      { "tariff": 30, "response": "Canada will not be bullied, we aren't for sale either." }
     ]
   },
   { "id": 8, 
