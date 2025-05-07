@@ -3,6 +3,9 @@ const gt = JSON.parse(localStorage.getItem(gameTimeItem));
 
 const gameTimer = document.getElementById("game-timer");
 
+let globalMarketVolatility = 0;
+
+
 let gameTime;
 if (!gt) {
   gameTime = 0;
@@ -14,7 +17,7 @@ const gameTimerWin = 5;
 
 counter = () => {
   setTimer(++gameTime);
-  if (gameTime > gameTimerWin
+  if (gameTime > gameTimerWin 
     && calculateAllTarrifs() <= 0) { 
       // TODO: Add celeration animations, dialog box, ect.
       alert('You won!');
@@ -142,6 +145,7 @@ resetCountries = () => {
   resetCountryButtons();
   closeResetDialogBox();
   gameTime = 0;
+  globalMarketVolatility = 0;
 }
 
 loadCountries();
@@ -232,6 +236,8 @@ addTariff = (country, tariff) => {
     startGame();
   }
   country.tariff = country.tariff + tariff;
+  globalMarketVolatility = globalMarketVolatility + 1;
+  console.log(globalMarketVolatility) // remove dave
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
   tariffResponse(country);
