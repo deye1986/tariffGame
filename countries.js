@@ -65,7 +65,7 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 },
     "responses": [
-      { "tariff": 10, "response": "Grab her by the, what Mr President?"}
+      { "tariff": 10, "response": "Grab her by the, what Mr President?"},
       { "tariff": 20, "response": "Why do you do this?" },
       { "tariff": 50, "response": "What is going on Trump?" }
     ],
