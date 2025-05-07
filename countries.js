@@ -97,7 +97,8 @@ const defaultCountries = [
     "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 },
     "flagImage": "flags/flagImageAsiaRegion.svg",
     "responses":[
-      { "tariff": 20, "response": "You need our cheap electronics, and clothes this doesn't make sense." }
+      { "tariff": 20, "response": "You need our cheap electronics, and clothes this doesn't make sense." },
+      { "tariff": 30, "response": "Oh you are trying to lower the value of your currency?"}
     ]
   },
   { "id": 10, 
@@ -106,7 +107,8 @@ const defaultCountries = [
     "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
     "flagImage": "flags/flagImageAustralia.SVG",
     "responses": [
-      { "tariff": 10, "response": "We will just ignore that for now, good one mate." }
+      { "tariff": 10, "response": "We will just ignore that for now, good one mate." },
+      { "tariff": 20, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."}
     ]
   },
   {
@@ -116,8 +118,8 @@ const defaultCountries = [
     "imgCords": { "x": 200, "y": 180, "width": 350, "height": 250 },
     "flagImage": "flags/flagImageGreenland.svg",
     "responses": [
-      {"tariff": 10, "response": "Greenland retaliates with matching trade tariff's."},
-      {"tariff": 20, "response": "Greenland refuses to allow America to operate data centres in its cold climate"}
+      {"tariff": 10, "response": "Greenland retaliates with matching trade tariff's." },
+      {"tariff": 20, "response": "Greenland refuses to allow America to operate data centres in its cold climate" }
     ]
   },
   {
