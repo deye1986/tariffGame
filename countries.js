@@ -9,7 +9,12 @@ const defaultCountries = [
       { "tariff": 40, "response": "Blimey! This isn't what we spoke about in our last meeting" },
       { "tariff": 50, "response": "My goodness, the special relationship has been shattered!" },
       { "tariff": 80, "response": "Britain will no longer export to the USA and seeks a willing nation with lower tariffs to handle its imports" },
-      { "tariff": 100, "response": "We have had enough of you America, we won't be selling you anymore tea, so there!" }
+      { "tariff": 100, "response": "We have had enough of you America, we won't be selling you anymore tea, so there!" },
+      {"tariff": 120, "response": "The special relationship is now an sour break-up!"},
+      {"tariff": 140, "response": "Tarriffs on words : Everytime the word football is used in England, the NFL gets paid!"},
+      {"tariff": 160, "response": "Shippments of Yorkshire Tea and McVities Hobnobs are now taxed"},
+      {"tariff": 180, "response": "The BBC America branch has closed down, citing lack of funding."},
+      {"tariff": 200, "response": "The British Embassay and Foreign Office has advised all British citizens to return to the UK."}
     ],
     "flagImage": "flags/flagImageUnionFlag.svg",
     "cashReserves": 0
@@ -25,7 +30,10 @@ const defaultCountries = [
       { "tariff": 60,  "response": "Oh no, not cool America, we will sell your bonds if you carry on" },
       { "tariff": 100, "response": "We don't care America, you need us more than we need you!" },
       { "tariff": 120, "response": "We are now applying a tarrif back on you for the same rate America!" },
-      { "tariff": 140, "response": "You are only hurting yourself now America, do you like pain?"}
+      { "tariff": 140, "response": "You are only hurting yourself now America, do you like pain?"},
+      {"tariff": 160, "response": "We urge all countries to unite against the wicked capitalists."},
+      {"tariff": 180, "response": "'Global unity can triumph over trade tyranny', declared state run newspaper China Daily, noting Beijing's collaborations with Japan, South Korea and other Asian economies."},
+      {"tariff": 200, "response": "Beijing 'firmly opposes and will never accept such hegemonic and bullying practices', the foreign ministry spokesperson told reporters."}
     ],
     "flagImage": "flags/flagImageChina.svg",
     "cashReserves": 0
@@ -37,7 +45,14 @@ const defaultCountries = [
     "responses": [
       { "tariff": 10, "response": "Don't do anything we wouldn't do!" },
       { "tariff": 30, "response": "Don't be stupid America! We will need you to calm down before the next meeting" },
-      { "tariff": 60, "response": "We will replace what we buy off you from China if you carry on America" }
+      { "tariff": 60, "response": "We will replace what we buy off you from China if you carry on America" },
+      {"tariff": 80, "response": "EU member states voted unanimously to impose tariffs on US agricultural and industrial products in retaliation for the tariffs."},
+      {"tariff": 100, "response": "EU executive is planning a two-track approach of incentives and retaliatory measures to convince the White House to strike a deal. "},
+      {"tariff": 120, "response": "Counter-measures must be applied to the entire spectrum, not just goods, but should also include all the instruments we have', an Elysée official said."},
+      {"tariff": 140, "response": "French Pastries, Itallian pasta, and european cuisine is hit hardest, with stocks piling up in warehouses and at ports in europe."},
+      {"tariff": 160, "response": "Europe seeks to make concessions with current enemy, Russia, looking for potential trading partners"},
+      {"tariff": 180, "response": "Trump's latest tariffs are in addition to the 25% imposed on all vehicles and car parts imported into the U.S."},
+      {"tariff": 200, "response": "Europe lifts all global sanctions on Russian Federation and North Korea"}
     ],
     "flagImage": "flags/flagImageEurope.svg"
   },
@@ -46,7 +61,16 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 90, "y": 550, "width": 120, "height": 100 },
     "responses": [
-      { "tariff": 10, "response": "Hey gringo, don't be like that. You know we have a good thing going on" }
+      { "tariff": 10, "response": "Hey gringo, don't be like that. You know we have a good thing going on" },
+      {"tariff": 40, "response": "Taco tuesday is in decline as an American evening meal. No one can afford to import taco shells"},
+      {"tariff": 60, "response": "That wall works both ways america..."},
+      {"tariff": 80, "response": "Treating us like china ey, no more tequila"},
+      {"tariff": 100, "response": "The Mexican foreign ministry reduces support for immigration, in respomnse to the tariffs."},
+      {"tariff": 120, "response": "Mexican president Claudia Sheinbaum said Mexico would enact tariffs and non-tariff retaliation against the United States."},
+      {"tariff": 140, "response": "Ship routes to the USA from Mecico have been suspended."},
+      {"tariff": 160, "response": "Mecico is in talks with Russia, with an undisclosed agenda..."},
+      {"tariff": 180, "response": "Mexico sees this increase as an act of pre war aggression."},
+      {"tariff": 200, "response": "Russia offers incentives for permission to place ICBM's within the Mecican mainland and waters"}
     ],
     "flagImage": "flags/flagImageMexico.svg"
   },
@@ -55,8 +79,16 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 250, "y": 700, "width": 200, "height": 200 },
     "responses": [
-      { "tariff": 20, "response": "Well this is no surprise at all" },
-      { "tariff": 40, "response": "Oh we are so through with this, we arent giving you any Canals, stop trying to bully us" }
+      { "tariff": 20, "response": "South America has no response to the 10% increase." },
+      { "tariff": 40, "response": "Oh we are so through with this, we arent giving you any Canals, stop trying to bully us" },
+      {"tariff": 60, "response": "There will be no golf club real estate opportunities here Mr President."},
+      {"tariff": 80, "response": "Well this is no surprise at all"},
+      {"tariff": 100, "response": "South America imposes matching retalitory tariffs on the States."},
+      {"tariff": 120, "response": "Global prices of pharmacuticles haver rose, due to this increase."},
+      {"tariff": 140, "response": "Coffee is now filling shipyards and warehouses across the south, because no one will pay the added tax"},
+      {"tariff": 160, "response": "The Cartel seizes main shipping lines in the South American seas."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave South America."},
+      {"tariff": 200, "response": "South America sees this increase as an act of war"}
     ],
     "flagImage": "flags/flagImageSouthAmerica.svg"
   },
@@ -65,9 +97,16 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 },
     "responses": [
-      { "tariff": 10, "response": "Grab her by the, what Mr President?"},
+      { "tariff": 10, "response": "Africa has no response to the 10% increase."},
       { "tariff": 20, "response": "Why do you do this?" },
-      { "tariff": 50, "response": "What is going on Trump?" }
+      { "tariff": 60, "response": "What is going on Trump?" },
+      {"tariff": 80, "response": "Africans have now resorted to mocking the president everywhere possible."},
+      {"tariff": 100, "response": "Grab her by the, what Mr President?"},
+      {"tariff": 120, "response": "Africa imposes matching retalitory tariffs on the States."},
+      {"tariff": 140, "response": "African pirates and militias destroy american produce at checkpoints, leaving almost no incentive to buy from them."},
+      {"tariff": 160, "response": "Combined african armed forces intimidate and act aggresivley towards American Citizens within its territories."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Africa."},
+      {"tariff": 200, "response": "African nations see this increase as an act of war"}
     ],
     "flagImage": "flags/flagImageAfrica.svg"
   },
@@ -77,9 +116,16 @@ const defaultCountries = [
     "imgCords": { "x": 100, "y": 280, "width": 200, "height": 250 },
     "flagImage": "flags/flagImageCanada.svg",
     "responses": [
-      { "tariff": 10, "response": "We don't need your trade, Trump." },
-      { "tariff": 20, "response": "We won't be playing your silly games America" },
-      { "tariff": 30, "response": "Canada will not be bullied, we aren't for sale either." }
+      { "tariff": 10, "response": "Canada is not phased by a 10% tariff increase" },
+      { "tariff": 40, "response": "We won't be playing your silly games America" },
+      { "tariff": 60, "response": "Canada will not be bullied, we aren't for sale either." },
+      {"tariff": 80, "response": "We dont need your trade America"},
+      {"tariff": 100, "response": "Maple Syrup is removed from the american market in response to Trumps Tariff."},
+      {"tariff": 120, "response": "Canada is set to lose its statuas as the second-largest source of automobile parts imported to the United States."},
+      {"tariff": 140, "response": "In the first 9 months of 2024, Canadian government data estimated that CA$800 billion (US$550 billion) of goods crossed the Canada–U.S. border."},
+      {"tariff": 160, "response": "Canada imposes matching retalitory tariffs on the States."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Canada."},
+      {"tariff": 200, "response": "Canada sees this increase as an act of war"}
     ]
   },
   { "id": 8, 
@@ -88,7 +134,16 @@ const defaultCountries = [
     "imgCords": { "x": 800, "y": 300, "width": 300, "height": 180 },
     "flagImage": "flags/flagImageRussia.png",
     "responses": [
-      { "tariff": 10, "response": "I thought you didn't want this information releasing?" }
+      { "tariff": 10, "response": "The Russian Federation has no response to the 10% tariff increase." },
+      {"tariff": 40, "response": "Mr President, why the sudden increase in trade taxes? We are not amused."},
+      {"tariff": 60, "response": "The KGB are now planning active campaigns in the mainland USA."},
+      {"tariff": 80, "response": "I thought you didn't want this information releasing?"},
+      {"tariff": 100, "response": "Russian spies fly around the globe in an attempt to sabotage lines of supply with America."},
+      {"tariff": 120, "response": "The Russian Stock market falls briefly but sabalizes later on"},
+      {"tariff": 140, "response": "Russia offers to place ICBMS in nations wishing for trade incentives"},
+      {"tariff": 160, "response": "Russain closes all shipping lanes to American Supporters."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Russia."},
+      {"tariff": 200, "response": "Russia sees this increase as an act of war"}
     ]
   },
   { "id": 9, 
@@ -97,8 +152,16 @@ const defaultCountries = [
     "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 },
     "flagImage": "flags/flagImageAsiaRegion.svg",
     "responses":[
-      { "tariff": 20, "response": "You need our cheap electronics, and clothes this doesn't make sense." },
-      { "tariff": 30, "response": "Oh you are trying to lower the value of your currency?"}
+      { "tariff": 20, "response": "Happy to continue trading at rhese rates" },
+      { "tariff": 30, "response": "Oh you are trying to lower the value of your currency?"},
+      {"tariff": 60, "response": "Asia imposes matching retalitory tariffs on the States."},
+      {"tariff": 80, "response": "You need our cheap electronics, and clothes this doesn't make sense "},
+      {"tariff": 100, "response": "Malasia closes shipping lines with america, citing not enough American custom."},
+      {"tariff": 120, "response": "The Middle East closed shipping lanes with America"},
+      {"tariff": 140, "response": "North Korea gets involved, threatening cyber attacks on America and its global partners."},
+      {"tariff": 160, "response": "All asian nations form a trade union, excluding the united states."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Asia."},
+      {"tariff": 200, "response": "Asia sees this increase as an act of war "}
     ]
   },
   { "id": 10, 
@@ -107,8 +170,16 @@ const defaultCountries = [
     "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
     "flagImage": "flags/flagImageAustralia.SVG",
     "responses": [
-      { "tariff": 10, "response": "We will just ignore that for now, good one mate." },
-      { "tariff": 20, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."}
+      { "tariff": 10, "response": "Australia has no response to the 10% trade tax." },
+      { "tariff": 30, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."},
+      {"tariff": 60, "response": "We will just ignore that for now, good one mate."},
+      {"tariff": 80, "response": "The United States (US) has announced changes to tariffs imposed on imports from Australia. "},
+      {"tariff": 100, "response": "Fosters Lager no longer has a market in America... good one.  "},
+      {"tariff": 120, "response": "This is an evolving situation subject to change, which the Australian Government is monitoring closely."},
+      {"tariff": 140, "response": "Australia imposes matching retalitory tariffs on the States. "},
+      {"tariff": 160, "response": "Australia closes all shipping to America."},
+      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Australia."},
+      {"tariff": 200, "response": "Australia sees this increase as an act of war "}
     ]
   },
   {
@@ -118,8 +189,16 @@ const defaultCountries = [
     "imgCords": { "x": 200, "y": 180, "width": 350, "height": 250 },
     "flagImage": "flags/flagImageGreenland.svg",
     "responses": [
-      {"tariff": 10, "response": "Greenland retaliates with matching trade tariff's." },
-      {"tariff": 20, "response": "Greenland refuses to allow America to operate data centres in its cold climate" }
+      {"tariff": 10, "response": "Greenland has no response to the 10% trade tax." },
+      {"tariff": 30, "response": "Greenland refuses to allow America to operate data centres in its cold climate" },
+      {"tariff": 60, "response": "Greenland retaliates with matching trade tariff's."},
+      {"tariff": 80, "response": "Stocks of salmon and other fresh fish from Greenland, stock up at ports, hoping for a buyer soon.."},
+      {"tariff": 100, "response": "The government of greenland, is getting nervous with trumps erattic increases"},
+      {"tariff": 120, "response": "Greenland is nervous, with economic news making main headlines"},
+      {"tariff": 140, "response": "HELP: IF ANMYONE CAN SEE THIS press the ART OF THE DEAL button PLEASE!!"},
+      {"tariff": 160, "response": "The American foreign office advises all US citizens to leave Greenland. "},
+      {"tariff": 180, "response": "All shipping routes from Greenland to the states have been suspended, and diplomats are en route to an emergency meeting. "},
+      {"tariff": 200, "response": "Greenland sees this increase, along with speculation of an invasion by America, as an act of war."}
     ]
   },
   {
@@ -129,7 +208,16 @@ const defaultCountries = [
     "imgCords": { "x": 600, "y":810, "width": 80, "height": 80 },
     "flagImage": "flags/flagImageSouthAfrica.svg",
     "responses": [
-      {"tariff": 20, "response": "We are disapointed to see a 20% tariff applied, is there anything we can do to change your mind sir?"}
+      {"tariff": 20, "response": "Very reasonable Mr President, duely noted"},
+      {"tariff": 40, "response": "We are slightly concerned that these tariffs wil increase over time"},
+      {"tariff": 60, "response": "South Africa now hold s the USA as a major rival across the board"},
+      {"tariff": 80, "response": "We are disapointed to see a 80% tariff applied, is there anything we can do to change your mind sir?"},
+      {"tariff": 100, "response": "South Africa has no plans to retaliate over tariffs announced by President Donald Trump & will instead seek to negotiate exemptions."},
+      {"tariff": 120, "response": "This increase is a particular threat to South Africa, which exports over $2 billion a year in vehicles and auto parts to the U.S."},
+      {"tariff": 140, "response": "South Africa imposes matching retalitory tariffs on the States."},
+      {"tariff": 160, "response": "The American foreign office advises all US citizens to leave South Africa."},
+      {"tariff": 180, "response": "South Africa stops all services for American citizens in its country."},
+      {"tariff": 200, "response": "South Africa sees this increase as an act of war "}
     ]
   }
 ];
