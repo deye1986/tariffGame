@@ -10,13 +10,12 @@
 // the function should check if a threshold is reached and then display a response
 // from the json below, depending on the state of the game.
 
-const auxillaryResponses = 
-    { 
-      "id": 25, 
-      "name": "USA", 
-      "responses": [
-        { "signal": 1, "response": "Hi, welcome to Trump Tariff, click the countries buttons to get started." },
-        { "signal": 2, "response": "a response for somthing" },
-      ],
-      "flagImage": "flags/flagImageUSA.svg",
-    }
+const auxillaryResponses = { 
+  "id": 25, 
+  "name": "USA", 
+  "responses": [
+    { "signal": 1, "response": "Hi, welcome to Trump Tariff, click the countries buttons to get started." },
+    { "signal": 2, "response": "a response for somthing" },
+  ],
+  "flagImage": "flags/flagImageUSA.svg",
+};
