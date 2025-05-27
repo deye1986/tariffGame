@@ -61,7 +61,7 @@ const ticker = document.getElementById("game-ticker");
 const economicStatuses = [
   { min: 0, max: 99, message: 'The economy is all good', backgroundColour: 'green' },
   { min: 100, max: 399, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'orange' },
-  { min: 400, max: 9999, message: "Mr Preseident, I thought you knew to never go full retard", backgroundColour: 'red' }
+  { min: 400, max: 9999, message: "The worlds economy is experiencing finacial crisis", backgroundColour: 'red' }
 ];
 
 const statusMessage = document.getElementById('economic-status-message');
