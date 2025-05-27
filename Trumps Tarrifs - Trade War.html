@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Trumps%20Tarrifs%20-%20Trade%20War_files/styles.css">
+    <script src="Trumps%20Tarrifs%20-%20Trade%20War_files/countries.js"></script>
+    <script src="Trumps%20Tarrifs%20-%20Trade%20War_files/app.js" async=""></script>
+    <title>Trumps Tarrifs - Trade War</title>
+</head>
+<body>
+    <header>
+        Trumps Tariff's - Trade War
+    </header>
+    <main class="game-container">
+
+      <div class="game-status">        
+        <div>
+          <button onclick="startGame()" id="start-game-button" type="button" disabled="disabled">Start</button>
+          <button id="save-button" type="button" onclick="save()">Save</button>
+          <button id="art-of-the-deal-button" type="button" onclick="showResetDialogBox()">Art of the deal</button>
+        </div>
+        <div>
+          <p id="days-elapsed-text">Days elapsed: <span id="game-timer">287</span>
+          </p>
+        </div>
+      </div>
+
+      <div id="economic-status-bar">
+        <p id="economic-status-message">The economy is all good</p>
+      </div>  
+
+      <div class="game-controls">
+        <div id="button-container"><button type="button">UK 0</button><button type="button">China 10</button><button type="button">EU 0</button><button type="button">Mexico 0</button><button type="button">South America 0</button><button type="button">Africa 0</button><button type="button">Canada 0</button><button type="button">Russia 0</button><button type="button">Asia 0</button><button type="button">Australia 0</button><button type="button">Greenland 0</button><button type="button">South Africa 0</button></div>
+      </div>
+    
+      <canvas width="1024" height="1024" id="viewport"></canvas>        
+
+      <dialog id="countries-responses-dialog">
+        <button class="dialog-close-button" id="countries-dialog-close" autofocus="" type="button" onclick="closeCountriesDialog()">×</button>
+        <div id="dialog-pfp">
+          <img id="dialog-img" src="" alt="China">
+        </div>
+        <p id="game-ticker"></p>
+      </dialog>
+
+      <dialog id="reset-tariff-dialog">
+        <button class="dialog-close-button" id="reset-dialog-close" autofocus="" type="button" onclick="closeResetDialogBox()">×</button>
+        <div>
+          <p class="dialog-text">Are you sure? This action will reset all the tarrifs</p>
+          <div class="dialog-btn-options">
+            <button type="button" onclick="closeResetDialogBox()">No</button>
+            <button type="button" onclick="resetCountries()">Yes</button>
+          </div>
+        </div>
+      </dialog>
+
+      <div id="tooltip"></div>
+    </main>
+
+    <footer></footer>
+
+
+</body></html>

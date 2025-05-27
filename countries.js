@@ -97,7 +97,7 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 },
     "responses": [
-      { "tariff": 10, "response": "Africa has no response to the 10% increase."},
+      { "tariff": 10, "response": "Corruption is bad, but only if i am not involved."},
       { "tariff": 20, "response": "Why do you do this?" },
       { "tariff": 60, "response": "What is going on Trump?" },
       {"tariff": 80, "response": "Africans have now resorted to mocking the president everywhere possible."},
