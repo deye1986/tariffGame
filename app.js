@@ -257,14 +257,12 @@ addTariff = (country, tariff) => {
   console.log(globalMarketVolatility) // remove dave
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
-  tariffResponse(country);
+  tariffResponse(country.responses?.find(cr => cr.tariff == country.tariff));
 }
 
 const dialogImg = document.getElementById('dialog-img');
 
-tariffResponse = (country) => {
-  const response = country.responses?.find(cr => cr.tariff == country.tariff);
-  
+tariffResponse = (response) => {
   if (response) {
     clearMessageOnTicker();
     countriesDialog.showModal();
