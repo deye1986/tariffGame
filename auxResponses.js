@@ -17,6 +17,7 @@ const auxillaryResponses = {
   "responses": [
     { "signal": 1, "response": "Hi, welcome to Trump Tariff, click the countries buttons to get started." },
     { "signal": 2, "response": "a response for somthing" },
+    { "signal": 3, "response": "Donald Trump makes Canada an offer to become the 51st state"}
   ],
   "flagImage": "flags/flagImageUSA.svg",
 };
