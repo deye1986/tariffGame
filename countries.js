@@ -170,8 +170,8 @@ const defaultCountries = [
     "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
     "flagImage": "flags/flagImageAustralia.SVG",
     "responses": [
-      { "tariff": 10, "response": "Australia has no response to the 10% trade tax." },
-      { "tariff": 30, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."},
+      {"tariff": 10, "response": "Are you sure you want to play this game, mate?" },
+      {"tariff": 30, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."},
       {"tariff": 60, "response": "We will just ignore that for now, good one mate."},
       {"tariff": 80, "response": "The United States (US) has announced changes to tariffs imposed on imports from Australia. "},
       {"tariff": 100, "response": "Fosters Lager no longer has a market in America... good one.  "},
@@ -179,7 +179,7 @@ const defaultCountries = [
       {"tariff": 140, "response": "Australia imposes matching retalitory tariffs on the States. "},
       {"tariff": 160, "response": "Australia closes all shipping to America."},
       {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Australia."},
-      {"tariff": 200, "response": "Australia sees this increase as an act of war "}
+      {"tariff": 200, "response": "Australia sees this increase as an act of war."}
     ]
   },
   {
@@ -189,15 +189,15 @@ const defaultCountries = [
     "imgCords": { "x": 200, "y": 180, "width": 350, "height": 250 },
     "flagImage": "flags/flagImageGreenland.svg",
     "responses": [
-      {"tariff": 10, "response": "Greenland has no response to the 10% trade tax." },
-      {"tariff": 30, "response": "Greenland refuses to allow America to operate data centres in its cold climate" },
+      {"tariff": 10, "response": "Don't make us come and have a word with you about how economics work, America." },
+      {"tariff": 30, "response": "Greenland refuses to allow America to operate data centres in its cold climate." },
       {"tariff": 60, "response": "Greenland retaliates with matching trade tariff's."},
-      {"tariff": 80, "response": "Stocks of salmon and other fresh fish from Greenland, stock up at ports, hoping for a buyer soon.."},
-      {"tariff": 100, "response": "The government of greenland, is getting nervous with trumps erattic increases"},
-      {"tariff": 120, "response": "Greenland is nervous, with economic news making main headlines"},
+      {"tariff": 80, "response": "Stocks of salmon and other fresh fish from Greenland, stock up at ports, hoping for a buyer soon."},
+      {"tariff": 100, "response": "The government of greenland, is getting nervous with trumps erattic increases."},
+      {"tariff": 120, "response": "Greenland is nervous, with economic news making main headlines."},
       {"tariff": 140, "response": "HELP: IF ANMYONE CAN SEE THIS press the ART OF THE DEAL button PLEASE!!"},
       {"tariff": 160, "response": "The American foreign office advises all US citizens to leave Greenland. "},
-      {"tariff": 180, "response": "All shipping routes from Greenland to the states have been suspended, and diplomats are en route to an emergency meeting. "},
+      {"tariff": 180, "response": "All shipping routes from Greenland to the states have been suspended, and diplomats are en route to an emergency meeting."},
       {"tariff": 200, "response": "Greenland sees this increase, along with speculation of an invasion by America, as an act of war."}
     ]
   },
@@ -208,16 +208,16 @@ const defaultCountries = [
     "imgCords": { "x": 600, "y":810, "width": 80, "height": 80 },
     "flagImage": "flags/flagImageSouthAfrica.svg",
     "responses": [
-      {"tariff": 20, "response": "Very reasonable Mr President, duely noted"},
-      {"tariff": 40, "response": "We are slightly concerned that these tariffs wil increase over time"},
-      {"tariff": 60, "response": "South Africa now hold s the USA as a major rival across the board"},
+      {"tariff": 20, "response": "Very reasonable Mr President, duely noted."},
+      {"tariff": 40, "response": "We are slightly concerned that these tariffs wil increase over time."},
+      {"tariff": 60, "response": "South Africa now hold s the USA as a major rival across the board."},
       {"tariff": 80, "response": "We are disapointed to see a 80% tariff applied, is there anything we can do to change your mind sir?"},
       {"tariff": 100, "response": "South Africa has no plans to retaliate over tariffs announced by President Donald Trump & will instead seek to negotiate exemptions."},
       {"tariff": 120, "response": "This increase is a particular threat to South Africa, which exports over $2 billion a year in vehicles and auto parts to the U.S."},
       {"tariff": 140, "response": "South Africa imposes matching retalitory tariffs on the States."},
       {"tariff": 160, "response": "The American foreign office advises all US citizens to leave South Africa."},
       {"tariff": 180, "response": "South Africa stops all services for American citizens in its country."},
-      {"tariff": 200, "response": "South Africa sees this increase as an act of war "}
+      {"tariff": 200, "response": "South Africa sees this increase as an act of war."}
     ]
   }
 ];

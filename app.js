@@ -13,19 +13,33 @@ if (!gt) {
   gameTime = gt;
 }
 
-const gameTimerWin = 365;
+const gameTimerWin = 10;
+
+const particles = document.getElementById('particles');
+
+let timerInterval;
 
 counter = () => {
   setTimer(++gameTime);
   if (gameTime > gameTimerWin 
     && calculateAllTarrifs() <= 0) { 
       // TODO: Add celeration animations, dialog box, ect.
-      alert('You won!');
+      particles.style.display = 'block';
+      if (confirm('You won!')){
+        endParticles();
+        gameTime = 0;
+        localStorage.removeItem(gameTimeItem);
+        clearInterval(timerInterval);
+      } 
     }
 }
 
+endParticles = () => {
+  particles.style.display = 'none';
+}
+
 startGame = () => {
-  setInterval(counter, 1000);
+  timerInterval = setInterval(counter, 1000);
   document.getElementById("start-game-button").disabled = true;
 }
 
