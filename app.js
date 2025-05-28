@@ -257,12 +257,12 @@ addTariff = (country, tariff) => {
   console.log(globalMarketVolatility) // remove dave
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
-  tariffResponse(country.responses?.find(cr => cr.tariff == country.tariff));
+  tariffResponse(country, country.responses?.find(cr => cr.tariff == country.tariff));
 }
 
 const dialogImg = document.getElementById('dialog-img');
 
-tariffResponse = (response) => {
+tariffResponse = (country, response) => {
   if (response) {
     clearMessageOnTicker();
     countriesDialog.showModal();
@@ -278,6 +278,9 @@ tariffResponse = (response) => {
 
   updateStatus();
 }
+
+// TODO: this needs a bool that only shows once, using localStorage
+tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
 
 closeCountriesDialog = () => {
   countriesDialog.close();
