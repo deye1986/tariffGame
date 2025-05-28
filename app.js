@@ -288,7 +288,12 @@ tariffResponse = (country, response) => {
 }
 
 // TODO: this needs a bool that only shows once, using localStorage
-tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
+const hasPlayedItem = 'hasPlayed';
+const hasPlayed = localStorage.getItem(hasPlayedItem);
+if (!hasPlayed) {
+  tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
+  localStorage.setItem(hasPlayedItem, true);
+}
 
 closeCountriesDialog = () => {
   countriesDialog.close();
