@@ -193,40 +193,33 @@ calculateXAndY = (event) => {
   return { x, y };
 }
 
-showTooltipMouseOver = event => {
-  const mouse = calculateXAndY(event);
-
-  const country = countries.find(
-    c => c.imgCords != null
+countryFilter = (c, mouse) =>  c.imgCords != null
     && mouse.x >= (c.imgCords.x - c.imgCords.width / 2)
     && mouse.x <= (c.imgCords.x + c.imgCords.width / 2)
     && mouse.y >= (c.imgCords.y - c.imgCords.height / 2)
-    && mouse.y <= (c.imgCords.y + c.imgCords.height / 2));
+    && mouse.y <= (c.imgCords.y + c.imgCords.height / 2);
 
-    if (country) {
-      tooltip.style.display = 'block';
-      tooltip.style.left = event.pageX + 'px';
-      tooltip.style.top = event.pageY + 'px';
-      tooltip.innerHTML = country.name + ' <br/>Tariff: ' + country.tariff;
-    } else {
-      tooltip.style.display = 'none';
-    }
+showTooltipMouseOver = event => {
+  const mouse = calculateXAndY(event);
+  const country = countries.find(c => countryFilter(c, mouse));
+
+  if (country) {
+    tooltip.style.display = 'block';
+    tooltip.style.left = event.pageX + 'px';
+    tooltip.style.top = event.pageY + 'px';
+    tooltip.innerHTML = country.name + ' <br/>Tariff: ' + country.tariff;
+  } else {
+    tooltip.style.display = 'none';
+  }
 }
 
 canvas.addEventListener('mousemove', showTooltipMouseOver);
 
 addTariffOnClick = event => {
   const mouse = calculateXAndY(event);
-
-  const country = countries.filter(
-    c => c.imgCords != null
-    && mouse.x >= (c.imgCords.x - c.imgCords.width / 2)
-    && mouse.x <= (c.imgCords.x + c.imgCords.width / 2)
-    && mouse.y >= (c.imgCords.y - c.imgCords.height / 2)
-    && mouse.y <= (c.imgCords.y + c.imgCords.height / 2));
-
-    country.forEach(c => addTariff(c, 10));
-    showTooltipMouseOver(event);
+  const country = countries.filter(c => countryFilter(c, mouse));
+  country.forEach(c => addTariff(c, 10));
+  showTooltipMouseOver(event);
 }
 
 canvas.addEventListener('click', addTariffOnClick);
@@ -287,8 +280,12 @@ tariffResponse = (country, response) => {
   updateStatus();
 }
 
-// TODO: this needs a bool that only shows once, using localStorage
-tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
+const hasPlayedItem = 'hasPlayed';
+const hasPlayed = localStorage.getItem(hasPlayedItem);
+if (!hasPlayed) {
+  tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
+  localStorage.setItem(hasPlayedItem, true);
+}
 
 closeCountriesDialog = () => {
   countriesDialog.close();

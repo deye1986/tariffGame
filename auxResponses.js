@@ -15,9 +15,9 @@ const auxillaryResponses = {
   "id": 25, 
   "name": "USA", 
   "responses": [
-    { "signal": 1, "response": "Hi, welcome to Trump Tariff, click the countries buttons to get started." },
+    { "signal": 1, "response": "Hello, and welcome to the most wonderful and greatest tariff game in the world. Trumps Tariff's. Lets get this trade war started, first you just need to grab 'em right by the p.... sorry I mean, click the countries and add some tariffs to get things started." },
     { "signal": 2, "response": "a response for somthing" },
     { "signal": 3, "response": "Donald Trump makes Canada an offer to become the 51st state"}
   ],
-  "flagImage": "flags/flagImageUSA.svg",
+  "flagImage": "flags/USA.svg",
 };
