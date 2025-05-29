@@ -132,7 +132,7 @@ const defaultCountries = [
     "name": "Russia", 
     "tariff": 0,
     "imgCords": { "x": 800, "y": 300, "width": 300, "height": 180 },
-    "flagImage": "flags/flagImageRussia.png",
+    "flagImage": "flags/flagImageRussia.svg",
     "responses": [
       { "tariff": 10, "response": "The Russian Federation has no response to the 10% tariff increase." },
       {"tariff": 40, "response": "Mr President, why the sudden increase in trade taxes? We are not amused."},
