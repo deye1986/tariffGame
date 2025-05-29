@@ -241,8 +241,8 @@ removeCountryButtons = () => {
 
 loadCountryButtons();
 
-fiftyFirstStateOffer = (country) => {
-  if (country.id === 7 && country.tariff === 110) {
+genericGameEventMessages = (country) => {
+  if (country.id === 7 && country.tariff === 20) {
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[2]);
   }
 }
@@ -257,7 +257,7 @@ addTariff = (country, tariff) => {
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
   tariffResponse(country, country.responses?.find(cr => cr.tariff == country.tariff));
-  fiftyFirstStateOffer(country);
+  genericGameEventMessages(country);
 }
 
 const dialogImg = document.getElementById('dialog-img');
