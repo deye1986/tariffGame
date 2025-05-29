@@ -228,6 +228,7 @@ loadCountryButtons = () => {
   countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
+    button.setAttribute("role", "Increment Ten to the selected country's tariff.");
     button.textContent = country.name + ' ' + country.tariff;
     button.addEventListener('click', () => addTariff(country, 10)); 
     container.appendChild(button); 
@@ -244,6 +245,9 @@ loadCountryButtons();
 genericGameEventMessages = (country) => {
   if (country.id === 7 && country.tariff === 20) {
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[2]);
+  }
+  if (country.id === 8 && country.tariff === 20) {
+    tariffResponse(auxillaryResponses, auxillaryResponses.responses[3]);
   }
 }
 
@@ -314,3 +318,12 @@ showResetDialogBox = () => {
 closeResetDialogBox = () => {
   resetDialog.close();
 }
+
+
+// accessability attribute settings - found in browser: 
+// F12 > Accessability Inspector > Properties > Attributes > XML roles.
+ canvas.setAttribute("role", "The map dispaly and alternative play area.");
+ countriesDialog.setAttribute("role", "This is a pop up dialog box displaying a picture of a flag and a responding message.");
+ statusMessage.setAttribute("role", "The message representing the global economic climate");
+ statusBar.setAttribute("role", "This displays major events in the game and is coulored green, yellow and red depending on the economic climate");
+

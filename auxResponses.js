@@ -17,7 +17,8 @@ const auxillaryResponses = {
   "responses": [
     { "signal": 1, "response": "Hello, and welcome to the most wonderful and greatest tariff game in the world. Trumps Tariff's. Lets get this trade war started, first you just need to grab 'em right by the p.... sorry I mean, click the countries and add some tariffs to get things started." },
     { "signal": 2, "response": "a response for somthing" },
-    { "signal": 3, "response": "Donald Trump makes Canada an offer to become the 51st state"}
+    { "signal": 3, "response": "Donald Trump makes Canada an offer to become the 51st state"},
+    { "signal": 4 ,"response": "Russian state backed hackers have brought down unpreapared American small to medium enterprises (S.M.E's), in retaliation for applied tariffs. The White House has said full support will be made availible for business owners to recover from attacks. A russian spokesperson said that Russia has nothing to do with this."}
   ],
   "flagImage": "flags/USA.svg",
 };
