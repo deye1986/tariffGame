@@ -25,11 +25,11 @@ const defaultCountries = [
     "imgCords": { "x": 800, "y": 450, "width": 300, "height": 100 },
     "responses": [
       { "tariff": 10,  "response": "Are you sure you want to play this game, America?"},
-      { "tariff": 30,  "response": "Oh you better not you god damn America, we will not be bullied!" },
-      { "tariff": 50,  "response": "God damn, America. Do you really want to play this game?" },
+      { "tariff": 30,  "response": "Oh you better not you dang it America, we will not be bullied!" },
+      { "tariff": 50,  "response": "Dang it, America. Do you really want to play this game?" },
       { "tariff": 60,  "response": "Oh no, not cool America, we will sell your bonds if you carry on" },
       { "tariff": 100, "response": "We don't care America, you need us more than we need you!" },
-      { "tariff": 120, "response": "We are now applying a tarrif back on you for the same rate America!" },
+      { "tariff": 120, "response": "We are now applying a tariff back on you for the same rate America!" },
       { "tariff": 140, "response": "You are only hurting yourself now America, do you like pain?"},
       {"tariff": 160, "response": "We urge all countries to unite against the wicked capitalists."},
       {"tariff": 180, "response": "'Global unity can triumph over trade tyranny', declared state run newspaper China Daily, noting Beijing's collaborations with Japan, South Korea and other Asian economies."},
@@ -61,7 +61,7 @@ const defaultCountries = [
     "tariff": 0,
     "imgCords": { "x": 90, "y": 550, "width": 120, "height": 100 },
     "responses": [
-      { "tariff": 10, "response": "Hey gringo, don't be like that. You know we have a good thing going on" },
+      { "tariff": 10, "response": "Hey man, don't be like that. You know we have a good thing going on" },
       {"tariff": 40, "response": "Taco tuesday is in decline as an American evening meal. No one can afford to import taco shells"},
       {"tariff": 60, "response": "That wall works both ways america..."},
       {"tariff": 80, "response": "Treating us like china ey, no more tequila"},
@@ -98,8 +98,8 @@ const defaultCountries = [
     "imgCords": { "x": 580, "y": 600, "width": 300, "height": 300 },
     "responses": [
       { "tariff": 10, "response": "Corruption is bad, but only if i am not involved."},
-      { "tariff": 20, "response": "Why do you do this?" },
-      { "tariff": 60, "response": "What is going on Trump?" },
+      { "tariff": 20, "response": "Why are you doing this?" },
+      { "tariff": 60, "response": "What is going on here Trump?" },
       {"tariff": 80, "response": "Africans have now resorted to mocking the president everywhere possible."},
       {"tariff": 100, "response": "Grab her by the, what Mr President?"},
       {"tariff": 120, "response": "Africa imposes matching retalitory tariffs on the States."},
@@ -152,7 +152,7 @@ const defaultCountries = [
     "imgCords": { "x": 850, "y": 580, "width": 200, "height": 150 },
     "flagImage": "flags/flagImageAsiaRegion.svg",
     "responses":[
-      { "tariff": 20, "response": "Happy to continue trading at rhese rates" },
+      { "tariff": 20, "response": "Happy to continue trading at these rates" },
       { "tariff": 30, "response": "Oh you are trying to lower the value of your currency?"},
       {"tariff": 60, "response": "Asia imposes matching retalitory tariffs on the States."},
       {"tariff": 80, "response": "You need our cheap electronics, and clothes this doesn't make sense "},
@@ -174,12 +174,12 @@ const defaultCountries = [
       {"tariff": 30, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."},
       {"tariff": 60, "response": "We will just ignore that for now, good one mate."},
       {"tariff": 80, "response": "The United States (US) has announced changes to tariffs imposed on imports from Australia. "},
-      {"tariff": 100, "response": "Fosters Lager no longer has a market in America... good one.  "},
+      {"tariff": 100, "response": "Fosters Lager no longer has a market in America... good one... mate...  "},
       {"tariff": 120, "response": "This is an evolving situation subject to change, which the Australian Government is monitoring closely."},
-      {"tariff": 140, "response": "Australia imposes matching retalitory tariffs on the States. "},
-      {"tariff": 160, "response": "Australia closes all shipping to America."},
-      {"tariff": 180, "response": "The American foreign office advises all US citizens to leave Australia."},
-      {"tariff": 200, "response": "Australia sees this increase as an act of war."}
+      {"tariff": 140, "response": "Mate, Australia imposes matching retalitory tariffs on the States. "},
+      {"tariff": 160, "response": "Australia closes all shipping to America mate."},
+      {"tariff": 180, "response": "The American foreign office advises all US mates to leave Australia."},
+      {"tariff": 200, "response": "Mate, Australia sees this increase as an act of war."}
     ]
   },
   {
