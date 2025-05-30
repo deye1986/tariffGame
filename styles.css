@@ -190,6 +190,11 @@ footer {
   text-align: center;
 }
 
+.footer-link {
+  text-decoration: none;
+  color:darkgray;
+}
+
 @keyframes moveText {
   0% {
     transform: translateX(100%);

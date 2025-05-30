@@ -66,8 +66,18 @@
     </main>
 
     <footer>
-      <p>Copyright © J R.R. Hood Solutions LTD. & D Ikin 2025, All rights reserved.</p>
+      <p>Copyright © <a class="footer-link" href="https://hood-solutions.uk">J R.R. Hood Solutions LTD.</a> & D Ikin 2025, All rights reserved.</p>
+      <button onclick="showAboutDialogBox()">About Us</button>
     </footer>
+
+    <dialog id="about-dialog">
+      <button class="dialog-close-button" id="about-dialog-close" autofocus type="button" onclick="closeAboutDialogBox()">&times;</button>
+      <p>Developed by</p>
+      <ul>
+        <li>James Hood</li>
+        <li>David Ikin</li>
+      </ul>
+    </dialog>
 
 </body>
 </html>
