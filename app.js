@@ -5,7 +5,6 @@ const gameTimer = document.getElementById("game-timer");
 
 let globalMarketVolatility = 0;
 
-
 let gameTime;
 if (!gt) {
   gameTime = 0;
@@ -13,24 +12,19 @@ if (!gt) {
   gameTime = gt;
 }
 
-const gameTimerWin = 10;
-
+// Set game time required to 'Win'
+const gameTimerWin = 365;
 const particles = document.getElementById('particles');
-
 let timerInterval;
+const winningDialog = document.getElementById('winning-dialog');
 
 counter = () => {
   setTimer(++gameTime);
   if (gameTime > gameTimerWin 
     && calculateAllTarrifs() <= 0) { 
-      // TODO: Add celeration animations, dialog box, ect.
+      // TODO: Add celeration animations
       particles.style.display = 'block';
-      if (confirm('You won!')){
-        endParticles();
-        gameTime = 0;
-        localStorage.removeItem(gameTimeItem);
-        clearInterval(timerInterval);
-      } 
+      winningDialog.showModal();
     }
 }
 
@@ -38,9 +32,11 @@ endParticles = () => {
   particles.style.display = 'none';
 }
 
+const startGameBtn = document.getElementById("start-game-button");
+
 startGame = () => {
   timerInterval = setInterval(counter, 1000);
-  document.getElementById("start-game-button").disabled = true;
+  startGameBtn.disabled = true;
 }
 
 setTimer = (time) => {
@@ -110,7 +106,6 @@ processQueue = () => {
       }, typingSpeed);
     }
   }
-
   showCharacter();
 }
 
@@ -121,7 +116,6 @@ clearMessageOnTicker = () => {
 }
 
 const countryItem = 'countries';
-const chinaId = 2;
 
 let countries;
 
@@ -323,6 +317,15 @@ closeResetDialogBox = () => {
   resetDialog.close();
 }
 
+closeWinningDialogBox = () => {
+  endParticles();
+  gameTime = 0;
+  setTimer(gameTime);
+  localStorage.removeItem(gameTimeItem);
+  clearInterval(timerInterval);
+  startGameBtn.disabled = false;
+  winningDialog.close();
+}
 
 // accessability attribute settings - found in browser: 
 // F12 > Accessability Inspector > Properties > Attributes > XML roles.
@@ -330,4 +333,3 @@ closeResetDialogBox = () => {
  countriesDialog.setAttribute("role", "This is a pop up dialog box displaying a picture of a flag and a responding message.");
  statusMessage.setAttribute("role", "The message representing the global economic climate");
  statusBar.setAttribute("role", "This displays major events in the game and is coulored green, yellow and red depending on the economic climate");
-
