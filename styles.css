@@ -183,6 +183,11 @@ dialog {
 footer {
   font-family: Arial, Helvetica, sans-serif;
   color: darkgray;
+  position: fixed;
+  bottom: 0;
+  background-color: darkslategrey;
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes moveText {
