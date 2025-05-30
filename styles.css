@@ -75,18 +75,18 @@ header {
   font-weight: 1.25rem;
 
   text-shadow:
-    -2px -2px 0 black,
+    -1px -1px 0 black,
     2px -2px 0 darkgray,
-    -2px 2px 0 black,
+    -1px 1px 0 black,
     2px 2px 0 darkgray,
-    -3px 0px 0 #000,
-    3px 0px 0 darkgrey,
-    0px -3px 0 #000,
-    0px 3px 0 darkgray;
+    -1px 0px 0 #000,
+    2px 0px 0 darkgrey,
+    0px -1px 0 #000,
+    0px 1px 0 darkgray;
 }
 
 #economic-status-message {
-  animation: moveText 25s linear infinite;
+  animation: moveText 20s linear infinite;
   white-space: nowrap;
 }
 
