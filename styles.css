@@ -87,13 +87,9 @@ header {
   background-color: lightgreen;
   color: #FFF;
   position: relative;
-
-  height: 3rem;
   overflow: hidden;
-
   padding: 0.5rem;
   margin: 0.5rem;
-
   font-size: 1.75rem;
   font-weight: 1.25rem;
   text-shadow:

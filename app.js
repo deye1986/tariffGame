@@ -3,8 +3,6 @@ const gt = JSON.parse(localStorage.getItem(gameTimeItem));
 
 const gameTimer = document.getElementById("game-timer");
 
-let globalMarketVolatility = 0;
-
 let gameTime;
 if (!gt) {
   gameTime = 0;
@@ -151,13 +149,18 @@ resetCountryButtons = () => {
   loadCountryButtons();
 }
 
+save = () => {
+  const data = JSON.stringify(countries.map(minCountry));
+  localStorage.setItem(countryItem, data);
+  localStorage.setItem(gameTimeItem, gameTime);
+}
+
 resetCountries = () => {
   localStorage.removeItem(countryItem);
   localStorage.removeItem(gameTimeItem);
   loadCountries();
   resetCountryButtons();
   closeResetDialogBox();
-  globalMarketVolatility = 0;
 }
 
 loadCountries();
@@ -254,12 +257,11 @@ addTariff = (country, tariff) => {
     startGame();
   }
   country.tariff = country.tariff + tariff;
-  globalMarketVolatility = globalMarketVolatility + 1;
-  console.log(globalMarketVolatility) // remove dave
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
   tariffResponse(country, country.responses?.find(cr => cr.tariff == country.tariff));
   genericGameEventMessages(country);
+  save();
 }
 
 const dialogImg = document.getElementById('dialog-img');
@@ -301,12 +303,6 @@ minCountry = (country) => {
   }
 }
 
-save = () => {
-  const data = JSON.stringify(countries.map(minCountry));
-  localStorage.setItem(countryItem, data);
-  localStorage.setItem(gameTimeItem, gameTime);
-}
-
 const resetDialog = document.getElementById('reset-tariff-dialog');
 
 showResetDialogBox = () => {
@@ -318,6 +314,7 @@ closeResetDialogBox = () => {
 }
 
 closeWinningDialogBox = () => {
+  resetCountries();
   endParticles();
   gameTime = 0;
   setTimer(gameTime);
