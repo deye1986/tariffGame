@@ -48,7 +48,7 @@ header {
   display: grid;
   grid-template-columns: 2fr;
   flex-wrap: wrap;
-  background-color: lightgray;
+  background-color: slategray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
 
