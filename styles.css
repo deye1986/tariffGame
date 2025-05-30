@@ -209,6 +209,11 @@ footer {
   border-top-right-radius: 1rem;
 }
 
+.footer-link {
+  text-decoration: none;
+  color:darkgray;
+}
+
 @keyframes moveText {
   0% {
     transform: translateX(100%);

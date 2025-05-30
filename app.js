@@ -313,6 +313,15 @@ closeResetDialogBox = () => {
   resetDialog.close();
 }
 
+const aboutDialog = document.getElementById('about-dialog');
+showAboutDialogBox = () => {
+  aboutDialog.showModal();
+}
+
+closeAboutDialogBox = () => {
+  aboutDialog.close();
+}
+
 closeWinningDialogBox = () => {
   resetCountries();
   endParticles();
