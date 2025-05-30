@@ -22,22 +22,39 @@ header {
  }
 
  canvas{
-    padding: 0;
-    margin: auto;
-    display: block;
-    max-height: 35rem;
-    margin-top: 1rem;
+  display: flex;
+  margin: auto;
+  padding: 0.5rem;
+  max-width: 60%;
+  max-height: 60%;
+  border-radius: 1rem;
 }
+  .canvas-container { 
+    background-color: lightgray;
+    border-radius: 1rem;
+    border: 0.175rem solid grey;
+  }
 
 .game-container{
     display: grid;
     grid-template-columns: 4fr;
     flex-wrap: wrap;
-    
     background-color: lightgray;
     border-radius: 1rem;
     border: 0.175rem solid grey;
  }
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  border-radius: 1rem;
+  border: 0.175rem solid grey;
+
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
 
 #button-container {
   display: grid;
@@ -84,7 +101,7 @@ header {
 
 #economic-status-bar {
   
-  background-color: lightgreen;
+  background-color: #25D366;
   color: #FFF;
   position: relative;
 
@@ -106,7 +123,7 @@ header {
     0px -1px 0 #000,
     0px 1px 0 darkslategray;
 
-  border: 0.175rem solid green;
+  border: 0.175rem solid grey;
   border-radius: 1rem;
 }
 

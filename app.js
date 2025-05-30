@@ -254,8 +254,6 @@ addTariff = (country, tariff) => {
     startGame();
   }
   country.tariff = country.tariff + tariff;
-  globalMarketVolatility = globalMarketVolatility + 1;
-  console.log(globalMarketVolatility) // remove dave
   countries = countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
   tariffResponse(country, country.responses?.find(cr => cr.tariff == country.tariff));
