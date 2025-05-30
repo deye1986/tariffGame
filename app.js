@@ -74,7 +74,8 @@ const ticker = document.getElementById("game-ticker");
 
 const economicStatuses = [
   { min: 0, max: 99, message: 'The economy is all good', backgroundColour: 'green' },
-  { min: 100, max: 399, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'orange' },
+  { min: 100, max: 249, message: "Hey, are you sure you know what you're doing?", backgroundColour: 'yellow' },
+  { min: 250, max: 399, message: "US trade court blocks Trump's sweeping tariffs.", backgroundColour: 'orange'},
   { min: 400, max: 9999, message: "The worlds economy is experiencing finacial crisis", backgroundColour: 'red' }
 ];
 
@@ -243,6 +244,9 @@ removeCountryButtons = () => {
 loadCountryButtons();
 
 genericGameEventMessages = (country) => {
+  if ((country.id === 2 && country.tariff >= 50), (country.id === 4 && country.tariff >= 50), (country.id === 8 && country.tariff >= 50)) {  
+    tariffResponse(auxillaryResponses, auxillaryResponses.responses[1]);
+  }
   if (country.id === 7 && country.tariff === 20) {
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[2]);
   }

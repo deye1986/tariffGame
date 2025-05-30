@@ -195,7 +195,7 @@ const defaultCountries = [
       {"tariff": 80, "response": "Stocks of salmon and other fresh fish from Greenland, stock up at ports, hoping for a buyer soon."},
       {"tariff": 100, "response": "The government of greenland, is getting nervous with trumps erattic increases."},
       {"tariff": 120, "response": "Greenland is nervous, with economic news making main headlines."},
-      {"tariff": 140, "response": "HELP: IF ANMYONE CAN SEE THIS press the ART OF THE DEAL button PLEASE!!"},
+      {"tariff": 140, "response": "HELP: IF ANYONE CAN SEE THIS press the ART OF THE DEAL button PLEASE!!"},
       {"tariff": 160, "response": "The American foreign office advises all US citizens to leave Greenland. "},
       {"tariff": 180, "response": "All shipping routes from Greenland to the states have been suspended, and diplomats are en route to an emergency meeting."},
       {"tariff": 200, "response": "Greenland sees this increase, along with speculation of an invasion by America, as an act of war."}
@@ -210,7 +210,7 @@ const defaultCountries = [
     "responses": [
       {"tariff": 20, "response": "Very reasonable Mr President, duely noted."},
       {"tariff": 40, "response": "We are slightly concerned that these tariffs wil increase over time."},
-      {"tariff": 60, "response": "South Africa now hold s the USA as a major rival across the board."},
+      {"tariff": 60, "response": "South Africa now holds the USA as a major rival across the board."},
       {"tariff": 80, "response": "We are disapointed to see a 80% tariff applied, is there anything we can do to change your mind sir?"},
       {"tariff": 100, "response": "South Africa has no plans to retaliate over tariffs announced by President Donald Trump & will instead seek to negotiate exemptions."},
       {"tariff": 120, "response": "This increase is a particular threat to South Africa, which exports over $2 billion a year in vehicles and auto parts to the U.S."},

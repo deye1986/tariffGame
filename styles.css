@@ -49,6 +49,7 @@ header {
   display: flex;
   grid-template-columns: wrap;
   padding: 1.5rem;
+  text-shadow: #000;
 }
 
 #days-elapsed-text{
@@ -64,7 +65,7 @@ header {
 }
 
 #economic-status-bar {
-  background-color: green;
+  background-color: lightgreen;
   color: #FFF;
   position: relative;
   width: 100%;
@@ -72,10 +73,20 @@ header {
   overflow: hidden;
   font-size: 1.4rem;
   font-weight: 1.25rem;
+
+  text-shadow:
+    -2px -2px 0 black,
+    2px -2px 0 darkgray,
+    -2px 2px 0 black,
+    2px 2px 0 darkgray,
+    -3px 0px 0 #000,
+    3px 0px 0 darkgrey,
+    0px -3px 0 #000,
+    0px 3px 0 darkgray;
 }
 
 #economic-status-message {
-  animation: moveText 20s linear infinite;
+  animation: moveText 25s linear infinite;
   white-space: nowrap;
 }
 
