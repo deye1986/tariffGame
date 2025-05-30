@@ -1,5 +1,11 @@
 const gameTimeItem = 'gameTime';
-const gt = JSON.parse(localStorage.getItem(gameTimeItem));
+const gameTimeSaved = localStorage.getItem(gameTimeItem);
+let gt;
+if (gameTimeSaved) {
+ gt = JSON.parse(gameTimeSaved);
+}
+
+import defaultCountries from './countries.js';
 
 const gameTimer = document.getElementById("game-timer");
 
@@ -38,6 +44,8 @@ startGame = () => {
 }
 
 setTimer = (time) => {
+  if (!time) return;
+
   gameTimer.innerHTML = time;
 }
 
@@ -77,8 +85,10 @@ const statusMessage = document.getElementById('economic-status-message');
 const statusBar = document.getElementById('economic-status-bar');
 
 updateEconomicStatus = (status) => {
-  statusMessage.innerText = status.message;
-  statusBar.style.backgroundColor = status.backgroundColour;
+  if (!status) return;
+
+  statusMessage?.innerText = status.message;
+  statusBar?.style.backgroundColor = status.backgroundColour;
 }
 
 processQueue = () => {
@@ -125,7 +135,7 @@ updateStatus = () => {
   const status = economicStatuses.find(s => s.min <= allTarrifs
     && s.max >= allTarrifs);
 
-  if (status && status.message != statusMessage.innerText) {
+  if (status && status.message != statusMessage?.innerText) {
     updateEconomicStatus(status);
   }
 }
@@ -133,7 +143,13 @@ updateStatus = () => {
 loadCountries = () => {
   let jsonCountries = JSON.parse(JSON.stringify(defaultCountries));
 
-  const savedCountries = JSON.parse(localStorage.getItem(countryItem));
+  const countrySavedItem = localStorage.getItem(countryItem);
+
+  let savedCountries;
+
+   if (countrySavedItem){
+     savedCountries = JSON.parse(countrySavedItem);
+   }
 
   countries = jsonCountries;
 

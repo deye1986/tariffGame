@@ -1,4 +1,4 @@
-const defaultCountries = [
+export const defaultCountries = [
   { 
     "id": 1, 
     "name": "UK", 
