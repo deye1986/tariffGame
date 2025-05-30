@@ -244,10 +244,10 @@ genericGameEventMessages = (country) => {
   if ((country.id === 2 && country.tariff >= 50), (country.id === 4 && country.tariff >= 50), (country.id === 8 && country.tariff >= 50)) {  
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[1]);
   }
-  if (country.id === 7 && country.tariff === 20) {
+  if (country.id === 7 && country.tariff === 90) {
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[2]);
   }
-  if (country.id === 8 && country.tariff === 20) {
+  if (country.id === 8 && country.tariff === 90) {
     tariffResponse(auxillaryResponses, auxillaryResponses.responses[3]);
   }
 }
