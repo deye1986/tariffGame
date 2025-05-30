@@ -291,7 +291,7 @@ const hasPlayedItem = 'hasPlayed';
 const hasPlayed = localStorage.getItem(hasPlayedItem);
 if (!hasPlayed) {
   tariffResponse(auxillaryResponses, auxillaryResponses.responses[0]);
-  localStorage.setItem(hasPlayedItem, true);
+  localStorage.setItem(hasPlayedItem, true); //change bool val to debug intro dia
 }
 
 closeCountriesDialog = () => {
