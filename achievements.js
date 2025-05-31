@@ -50,6 +50,7 @@ let achievements = [{
   id: 8,
   name: 'Tariff King',
   description: "You have tariffed every country",
+  achieved: false,
   requirement: (state) => state.countries.every(c => c.tariff > 0)
 }];
 
