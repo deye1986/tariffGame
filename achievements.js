@@ -1,7 +1,3 @@
-calculateAllTarrifs = (countries) => {
-  return countries?.reduce((sum, item) => sum + item.tariff, 0);
-}
-
 let achievements = [{
   id: 1,
   name: 'The Beginning',
@@ -22,7 +18,9 @@ let achievements = [{
   description: 'You have started the ball rolling, down the hill and added tariffs totalling more than 100',
   achieved: false,
   requirement: (state) => {
-    calculateAllTarrifs(state.countries) > 100
+    // wasn't working with calculateAllTarrifs function, just doing it here 
+    // Assume it's a context issue (this model doesn't know wtf a function outside of itself is)
+    return state.countries.reduce((sum, item) => sum + item.tariff, 0) > 100
   }
 }];
 
