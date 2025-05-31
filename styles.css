@@ -316,7 +316,7 @@ footer {
 @media only screen and (max-width: 360px){
     
     header{
-        display: none; /* hide the header for smaller screens */
+      font-size: xx-small;
     }
   }
 
