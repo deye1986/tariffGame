@@ -23,11 +23,12 @@ header {
  }
 
 .canvas-container { 
+  
   background-color: slategray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
   padding: 0.175rem;
-  margin: 0.175rem;
+  margin: auto;
 }
 
 canvas{
@@ -40,34 +41,40 @@ canvas{
 }
 
 .game-container{
-  display: grid;
+  display: flex;
   grid-template-columns: 4fr;
   flex-wrap: wrap;
+
+  width: 100%;
+
   background-color: lightgray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
-  padding: 0.25rem;
-  margin: 0.25rem;
+  padding: 0.175rem;
+  margin: auto;
  }
 
 .dashboard {
-  display: grid;
-  grid-template-columns: 2fr;
-  flex-wrap: wrap;
+  max-width: 100%;
   background-color: slategray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
   padding: 0.25rem;
-  margin: 0.25rem;
+  margin: auto;
+}
+
+.dashboard-and-canvas-container {
+  margin: auto;
+  max-width: 95%;
 }
 
 #button-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  flex-wrap: wrap;
 
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: auto;
+
 
   background-color: darkgray;
   border-radius: 1rem;
@@ -76,16 +83,18 @@ canvas{
 
 #button-container button {
   margin: 0.2rem;
+  padding: 0.175rem;
 }
 
 /* game status container and its children */
 
 .game-status{
   display: flexbox;
+  flex-wrap: wrap;
   grid-template-columns: auto;
 
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: auto;
 
   text-shadow: #000;
 
@@ -96,7 +105,6 @@ canvas{
 
 #secondary-game-ticker {
   padding-right: 1rem;
-  ;
 }
 
 #days-elapsed-text{
@@ -116,16 +124,17 @@ canvas{
 
 .game-controls{
   margin-top: 0.25rem;
+
 }
 
 #economic-status-bar {
-  
+  width: 100%;
   background-color: #25D366;
   color: #FFF;
   position: relative;
   overflow: hidden;
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: auto;
   font-size: 1.75rem;
   font-weight: 1.25rem;
   text-shadow:
@@ -187,7 +196,7 @@ dialog {
 .dialog-btn-options {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
 }
 
 .dialog-btn-options button {
@@ -309,11 +318,68 @@ footer {
     header{
         display: none; /* hide the header for smaller screens */
     }
-}
+  }
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    scale: 99%;
+    text-align: center;
+    overflow-x: hidden;
 
   body {
     margin: 0;
   }
+
+  .game-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .game-status{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #button-container {
+    display: flex;
+    grid-template-columns: auto auto auto auto auto auto;
+    flex-wrap: wrap;
+  }
+
+  #button-container button {
+    min-width: none;
+  }
+
+  canvas {
+    max-width: 100%;
+    max-height: auto;
+    padding: 1px;
+    scale: 95%;
+  }
+
+  #save-button {
+      width: auto;
+      height: 70%;
+  }
+
+  #start-game-button {
+      margin-left: 1px;
+      margin-right: 1px;
+  }
+
+  #button-container button {
+      max-height: 50%;
+      max-width: 75%;
+  }
+
+  #economic-status-bar {
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+      padding: 1px;
+  }
+}
 
   .particles {
     display: none;
