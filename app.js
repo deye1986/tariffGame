@@ -23,7 +23,7 @@ const winningDialog = document.getElementById('winning-dialog');
 counter = () => {
   setTimer(++state.gameTime);
   if (state.gameTime > gameTimerWin 
-    && calculateAllTarrifs() <= 0) { 
+    && calculateAllTarrifs(state.countries) <= 0) { 
       // TODO: Add celeration animations
       particles.style.display = 'block';
       winningDialog.showModal();
