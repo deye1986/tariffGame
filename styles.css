@@ -23,12 +23,11 @@ header {
  }
 
 .canvas-container { 
-  
   background-color: slategray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
   padding: 0.175rem;
-  margin: auto;
+  margin: 0.175rem;
 }
 
 canvas{
@@ -41,40 +40,34 @@ canvas{
 }
 
 .game-container{
-  display: flex;
+  display: grid;
   grid-template-columns: 4fr;
   flex-wrap: wrap;
-
-  width: 100%;
-
   background-color: lightgray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
-  padding: 0.175rem;
-  margin: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
  }
 
 .dashboard {
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: 2fr;
+  flex-wrap: wrap;
   background-color: slategray;
   border-radius: 1rem;
   border: 0.175rem solid grey;
   padding: 0.25rem;
-  margin: auto;
-}
-
-.dashboard-and-canvas-container {
-  margin: auto;
-  max-width: 95%;
+  margin: 0.25rem;
 }
 
 #button-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  flex-wrap: wrap;
 
   padding: 0.5rem;
-  margin: auto;
-
+  margin: 0.5rem;
 
   background-color: darkgray;
   border-radius: 1rem;
@@ -83,18 +76,16 @@ canvas{
 
 #button-container button {
   margin: 0.2rem;
-  padding: 0.5rem;
 }
 
 /* game status container and its children */
 
 .game-status{
   display: flexbox;
-  flex-wrap: wrap;
   grid-template-columns: auto;
 
   padding: 0.5rem;
-  margin: auto;
+  margin: 0.5rem;
 
   text-shadow: #000;
 
@@ -103,38 +94,40 @@ canvas{
   border: 0.175rem solid grey;
 }
 
-#secondary-game-ticker {
-  padding-right: 1rem;
-}
-
-#days-elapsed-text{
-  text-align: center;
-  margin-left: auto;
-  float: left;
-}
-
 /*  buttons */
 
-.game-status button {
+#start-game-button{
   margin: 0.175rem;
   padding: 0.175rem;
   max-width: 10rem;
   max-height: 2rem;
 }
 
+#art-of-the-deal-button{
+  margin: 0.175rem;
+  padding: 0.175rem;
+  max-width: 10rem;
+  max-height: 2rem;
+}
+
+#days-elapsed-text{
+  text-align: center;
+  margin-left: auto;
+  float: right;
+}
+
 .game-controls{
   margin-top: 0.25rem;
-
 }
 
 #economic-status-bar {
-  width: 100%;
+  
   background-color: #25D366;
   color: #FFF;
   position: relative;
   overflow: hidden;
   padding: 0.5rem;
-  margin: auto;
+  margin: 0.5rem;
   font-size: 1.75rem;
   font-weight: 1.25rem;
   text-shadow:
@@ -196,7 +189,7 @@ dialog {
 .dialog-btn-options {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
 }
 
 .dialog-btn-options button {
@@ -247,10 +240,6 @@ footer {
 /* Mobile and tablet screens */
 
 @media only screen and (max-width: 590px){
-
-  dialog {
-    min-width: 80%;
-  }
 
   #tooltip {
     display: none!important;
@@ -316,70 +305,13 @@ footer {
 @media only screen and (max-width: 360px){
     
     header{
-      font-size: xx-small;
+        display: none; /* hide the header for smaller screens */
     }
-  }
-
-  * {
-    margin: 0;
-    box-sizing: border-box;
-    scale: 99%;
-    text-align: center;
-    overflow-x: hidden;
+}
 
   body {
     margin: 0;
   }
-
-  .game-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .game-status{
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  #button-container {
-    display: flex;
-    grid-template-columns: auto auto auto auto auto auto;
-    flex-wrap: wrap;
-  }
-
-  #button-container button {
-    min-width: none;
-  }
-
-  canvas {
-    max-width: 100%;
-    max-height: auto;
-    padding: 1px;
-    scale: 95%;
-  }
-
-  #save-button {
-      width: auto;
-      height: 70%;
-  }
-
-  #start-game-button {
-      margin-left: 1px;
-      margin-right: 1px;
-  }
-
-  #button-container button {
-      max-height: 50%;
-      max-width: 75%;
-  }
-
-  #economic-status-bar {
-      justify-content: center;
-      width: 100%;
-      margin: auto;
-      padding: 1px;
-  }
-}
 
   .particles {
     display: none;
