@@ -217,6 +217,11 @@ footer {
   padding: 0.2rem;
 }
 
+#achievements-content {
+  margin: 0.2rem;
+  padding: 02rem;
+}
+
 @keyframes moveText {
   0% {
     transform: translateX(100%);

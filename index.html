@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <link rel="stylesheet" href="styles.css">
-    <script src="achievements.js"></script>
+    <script src="achievements.js" defer></script>
     <script src="auxResponses.js"></script>
     <script src="countries.js"></script>
     <script src="app.js" async></script> 
@@ -27,6 +27,7 @@
           <div class="game-status">
             <button onclick="startGame()" id="start-game-button" type="button">Start</button>
             <button id="art-of-the-deal-button" type="button" onclick="showResetDialogBox()">Art of the deal</button>
+            <button type="button" onclick="showAchievementsDialogBox()">Achievements</button>
             <p id="days-elapsed-text">Days elapsed: <span id="game-timer">0</span></p>
         </div>
           <div id="economic-status-bar">
@@ -90,6 +91,13 @@
         <li>David Ikin</li>
       </ul>
       <p>With thanks to Everywhere we got free assets</p>
+    </dialog>
+
+    <dialog id="achievements-dialog">
+      <button class="dialog-close-button" autofocus type="button" onclick="closeAchievementsDialogBox()">&times;</button>
+      <h4>Achievements</h4>
+      <div id="achievements-content">
+      </div>
     </dialog>
 
 </body>

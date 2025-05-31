@@ -228,10 +228,10 @@ loadCountryButtons = () => {
   state.countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
-    button.setAttribute("role", "Increment Ten to the selected country's tariff.");
+    button.setAttribute("role", "Increment the selected country's tariff by Ten.");
     button.textContent = country.name + ' ' + country.tariff;
     button.addEventListener('click', () => addTariff(country, 10)); 
-    container.appendChild(button); 
+    container.appendChild(button);
   });
 }
 

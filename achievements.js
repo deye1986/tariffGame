@@ -3,7 +3,7 @@ calculateAllTarrifs = (countries) => countries.reduce((sum, item) => sum + item.
 let achievements = [{
   id: 1,
   name: 'The Beginning',
-  description: 'Has started the game',
+  description: 'You have started the game',
   achieved: false,
   requirement: (state) => state.gameTime > 0
 },{
@@ -15,7 +15,7 @@ let achievements = [{
 },{
   id: 3,
   name: 'Economic Uncertainty',
-  description: 'You have started the ball rolling, down the hill',
+  description: 'You have started the ball rolling, down the hill and added tariffs totalling more than 100',
   achieved: false,
   requirement: (state) =>  calculateAllTarrifs(state.countries) > 100
 }];
@@ -33,6 +33,24 @@ loadAchievements = () => {
     console.log('loading achievements')
     achievements = savedAchievements;
   }
+
+  displayAchievements();
+}
+
+const achievementContent = document.getElementById('achievements-content');
+
+clearAchievementsDisplay = () => {
+  const spans = achievementContent.querySelector('span');
+  spans.forEach(s => s.remove());
+}
+
+displayAchievements = () => {
+  achievements.forEach(a => {
+    const span = document.createElement('span');
+    span.id = `${a.id}-${a.name}`;
+    span.innerHTML = a.name + '<br/>' + a.description;
+    achievementContent.appendChild(span);
+  });
 }
 
 loadAchievements();
@@ -46,6 +64,8 @@ checkAchievementReached = (achievement, state) => {
     //TODO: Show toast pop up or something that's not too intrusive
     alert('You have achieved ' + achievement.name);
     saveAchievements(achievements);
+    clearAchievementsDisplay();
+    displayAchievements();
   }
 }
 
@@ -56,4 +76,14 @@ checkAchievements = (state) => {
     checkAchievementReached(a, state);
   });
   console.log('achievements after', achievements);
+}
+
+const achievementsDialogBox = document.getElementById('achievements-dialog');
+
+closeAchievementsDialogBox = () => {
+  achievementsDialogBox.close();
+}
+
+showAchievementsDialogBox = () => {
+  achievementsDialogBox.showModal();
 }
