@@ -46,6 +46,11 @@ let achievements = [{
   description: "You have won the game!",
   achieved: false,
   requirement: (state) => state.won
+},{
+  id: 8,
+  name: 'Tariff King',
+  description: "You have tariffed every country",
+  requirement: (state) => state.countries.every(c => c.tariff > 0)
 }];
 
 const achievementItem = 'achievements';
