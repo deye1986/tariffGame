@@ -9,19 +9,13 @@ let achievements = [{
   name: 'Tariffed a country',
   description: 'You have tariffed your first country!',
   achieved: false,
-  requirement: (state) => {
-    return state.countries.some(c => c.tariff > 0);
-  }
+  requirement: (state) => state.countries.some(c => c.tariff > 0)
 },{
   id: 3,
   name: 'Economic Uncertainty',
   description: 'You have started the ball rolling, down the hill and added tariffs totalling more than 100',
   achieved: false,
-  requirement: (state) => {
-    // wasn't working with calculateAllTarrifs function, just doing it here 
-    // Assume it's a context issue (this model doesn't know wtf a function outside of itself is)
-    return state.countries.reduce((sum, item) => sum + item.tariff, 0) > 100
-  }
+  requirement: (state) => state.countries.reduce((sum, item) => sum + item.tariff, 0) > 100
 }, {
   id: 4,
   name: 'Economic Downfall',
@@ -52,6 +46,30 @@ let achievements = [{
   description: "You have tariffed every country",
   achieved: false,
   requirement: (state) => state.countries.every(c => c.tariff > 0)
+},{
+  id: 9,
+  name: 'China Treatment',
+  description: 'You have tariffed a country more than 100%',
+  achieved: false,
+  requirement: (state) => state.countries.some(c => c.tariff > 100)
+},{
+  id: 10,
+  name: 'Half way there',
+  description: 'You have tariffed half of the countries',
+  achieved: false,
+  requirement: (state) => {
+    let tariffedCount = 0;
+    for (let i; i <= state.countries.length; i++) {
+      if (state.countries[i].tariff > 0) {
+        tariffedCount++;
+      }
+
+      if (tariffedCount > 6) {
+        return true;
+      }
+    }
+    return false;
+  }
 }];
 
 const achievementItem = 'achievements';
