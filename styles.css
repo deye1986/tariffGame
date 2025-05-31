@@ -94,6 +94,10 @@ canvas{
   border: 0.175rem solid grey;
 }
 
+#secondary-game-ticker {
+  padding-right: 1rem;
+}
+
 /*  buttons */
 
 .game-status button {
