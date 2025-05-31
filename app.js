@@ -3,11 +3,15 @@ const gt = JSON.parse(localStorage.getItem(gameTimeItem));
 
 const gameTimer = document.getElementById("game-timer");
 
-let gameTime;
+let state = {
+  gameTime: 0,
+  countries: []
+};
+
 if (!gt) {
-  gameTime = 0;
+  state.gameTime = 0;
 } else {
-  gameTime = gt;
+  state.gameTime = gt;
 }
 
 // Set game time required to 'Win'
@@ -17,8 +21,8 @@ let timerInterval;
 const winningDialog = document.getElementById('winning-dialog');
 
 counter = () => {
-  setTimer(++gameTime);
-  if (gameTime > gameTimerWin 
+  setTimer(++state.gameTime);
+  if (state.gameTime > gameTimerWin 
     && calculateAllTarrifs() <= 0) { 
       // TODO: Add celeration animations
       particles.style.display = 'block';
@@ -49,7 +53,7 @@ initGameTimer = (time) => {
   setTimer(time);
 }
 
-initGameTimer(gameTime);
+initGameTimer(state.gameTime);
 
 const countriesDialog = document.getElementById("countries-responses-dialog");
 
@@ -115,9 +119,7 @@ clearMessageOnTicker = () => {
 
 const countryItem = 'countries';
 
-let countries;
-
-calculateAllTarrifs = () => countries.reduce((sum, item) => sum + item.tariff, 0);
+calculateAllTarrifs = () => state.countries.reduce((sum, item) => sum + item.tariff, 0);
 
 updateStatus = () => {
   const allTarrifs = calculateAllTarrifs();
@@ -135,10 +137,10 @@ loadCountries = () => {
 
   const savedCountries = JSON.parse(localStorage.getItem(countryItem));
 
-  countries = jsonCountries;
+  state.countries = jsonCountries;
 
   if (savedCountries) {
-    savedCountries.forEach(country => countries.find(c => c.id == country.id).tariff = country.tariff);
+    savedCountries.forEach(country => state.countries.find(c => c.id == country.id).tariff = country.tariff);
   }
 
   updateStatus();
@@ -150,14 +152,14 @@ resetCountryButtons = () => {
 }
 
 save = () => {
-  const data = JSON.stringify(countries.map(minCountry));
+  const data = JSON.stringify(state.countries.map(minCountry));
   localStorage.setItem(countryItem, data);
-  localStorage.setItem(gameTimeItem, gameTime);
+  localStorage.setItem(gameTimeItem, state.gameTime);
 }
 
 resetCountries = () => {
   localStorage.removeItem(countryItem);
-  localStorage.removeItem(gameTimeItem);
+  //localStorage.removeItem(gameTimeItem);
   loadCountries();
   resetCountryButtons();
   closeResetDialogBox();
@@ -199,7 +201,7 @@ countryFilter = (c, mouse) =>  c.imgCords != null
 
 showTooltipMouseOver = event => {
   const mouse = calculateXAndY(event);
-  const country = countries.find(c => countryFilter(c, mouse));
+  const country = state.countries.find(c => countryFilter(c, mouse));
 
   if (country) {
     tooltip.style.display = 'block';
@@ -215,7 +217,7 @@ canvas.addEventListener('mousemove', showTooltipMouseOver);
 
 addTariffOnClick = event => {
   const mouse = calculateXAndY(event);
-  const country = countries.filter(c => countryFilter(c, mouse));
+  const country = state.countries.filter(c => countryFilter(c, mouse));
   country.forEach(c => addTariff(c, 10));
   showTooltipMouseOver(event);
 }
@@ -223,7 +225,7 @@ addTariffOnClick = event => {
 canvas.addEventListener('click', addTariffOnClick);
 
 loadCountryButtons = () => {
-  countries.forEach(country => {
+  state.countries.forEach(country => {
     const button = document.createElement('button');
     button.setAttribute('type', 'button');
     button.setAttribute("role", "Increment Ten to the selected country's tariff.");
@@ -253,14 +255,15 @@ genericGameEventMessages = (country) => {
 }
 
 addTariff = (country, tariff) => {
-  if (gameTime == 0) {
+  if (state.gameTime == 0) {
     startGame();
   }
   country.tariff = country.tariff + tariff;
-  countries = countries.map(c => c.id === country.id ? country : c);
+  state.countries = state.countries.map(c => c.id === country.id ? country : c);
   resetCountryButtons();
   tariffResponse(country, country.responses?.find(cr => cr.tariff == country.tariff));
   genericGameEventMessages(country);
+  checkAchievements(state);
   save();
 }
 
@@ -325,8 +328,8 @@ closeAboutDialogBox = () => {
 closeWinningDialogBox = () => {
   resetCountries();
   endParticles();
-  gameTime = 0;
-  setTimer(gameTime);
+  state.gameTime = 0;
+  setTimer(state.gameTime);
   localStorage.removeItem(gameTimeItem);
   clearInterval(timerInterval);
   startGameBtn.disabled = false;
