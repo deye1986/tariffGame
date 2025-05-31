@@ -96,14 +96,7 @@ canvas{
 
 /*  buttons */
 
-#start-game-button{
-  margin: 0.175rem;
-  padding: 0.175rem;
-  max-width: 10rem;
-  max-height: 2rem;
-}
-
-#art-of-the-deal-button{
+.game-status button {
   margin: 0.175rem;
   padding: 0.175rem;
   max-width: 10rem;
