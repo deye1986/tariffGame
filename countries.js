@@ -168,7 +168,7 @@ const defaultCountries = [
     "name": "Australia", 
     "tariff": 0,
     "imgCords": { "x": 970, "y": 730, "width": 100, "height": 100 },
-    "flagImage": "flags/flagImageAustralia.SVG",
+    "flagImage": "flags/flagImageAustralia.svg",
     "responses": [
       {"tariff": 10, "response": "Are you sure you want to play this game, mate?" },
       {"tariff": 30, "response": "Throw another shrimp on the Barbe! You're only hurting yourself here mate."},
