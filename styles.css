@@ -228,6 +228,10 @@ footer {
 
 @media only screen and (max-width: 590px){
 
+  dialog {
+    min-width: 80%;
+  }
+
   #tooltip {
     display: none!important;
   }
