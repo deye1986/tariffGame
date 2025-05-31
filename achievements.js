@@ -66,19 +66,13 @@ const achievementContent = document.getElementById('achievements-content');
 clearAchievementsDisplay = () => {
   const spans = achievementContent.querySelectorAll('span');
   spans?.forEach(s => s.remove());
-  const inputs = achievementContent.querySelectorAll('input');
-  inputs?.forEach(i => i.remove());
 }
 
 displayAchievements = () => {
   achievements.forEach(a => {
     const span = document.createElement('span');
-    const check = document.createElement('input');
-    check.type = 'checkbox';
-    check.checked = a.achieved;
     span.id = `${a.id}-${a.name}`;
     span.innerHTML = `<p>${a.name}<br/>${a.description}</p>`;
-    achievementContent.appendChild(check);
     achievementContent.appendChild(span);
   });
 }
