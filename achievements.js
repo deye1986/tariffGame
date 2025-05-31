@@ -22,6 +22,18 @@ let achievements = [{
     // Assume it's a context issue (this model doesn't know wtf a function outside of itself is)
     return state.countries.reduce((sum, item) => sum + item.tariff, 0) > 100
   }
+}, {
+  id: 4,
+  name: 'Economic Downfall',
+  description: "You've sent the economy into freefall, are you sure this is a good idea?",
+  achieved: false,
+  requirement: (state) => state.countries.reduce((sum, item) => sum + item.tariff) > 250
+},{
+  id: 5, 
+  name: 'Economic Collapse',
+  description: "You got the world enconomy in big trouble",
+  achieved: false,
+  requirement: (state) => state.countries.reduce((sum, item) => sum + item.tariff) > 400
 }];
 
 const achievementItem = 'achievements';
@@ -73,14 +85,15 @@ displayAchievements = () => {
 
 loadAchievements();
 
+const alertTicker = document.getElementById('alert-ticker');
+
 checkAchievementReached = (achievement, state) => {
   if (achievement.achieved) return;
 
   if (achievement.requirement(state)) {
     achievement.achieved = true;
     achievements = achievements.map(a => a.id === achievement.id ? achievement : a);
-    //TODO: Show toast pop up or something that's not too intrusive
-    alert('You have achieved ' + achievement.name);
+    alertTicker.innerText = `You have achieved ${achievement.name}: ${achievement.description}`; 
     saveAchievements(achievements);
     clearAchievementsDisplay();
     displayAchievements();
