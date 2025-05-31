@@ -96,16 +96,9 @@ canvas{
 
 /*  buttons */
 
-#start-game-button{
+.game-status button{
   margin: 0.175rem;
-  padding: 0.175rem;
-  max-width: 10rem;
-  max-height: 2rem;
-}
-
-#art-of-the-deal-button{
-  margin: 0.175rem;
-  padding: 0.175rem;
+  padding: 0.9rem;
   max-width: 10rem;
   max-height: 2rem;
 }
@@ -226,6 +219,11 @@ footer {
 #achievements-content span {
   padding: 0.2rem;
   margin: 0.2rem;
+}
+
+.blurred-text {
+  filter: blur(5px); /* Adjust the blur radius as needed */
+  pointer-events: none; /* Prevent interaction with the text */
 }
 
 @keyframes moveText {

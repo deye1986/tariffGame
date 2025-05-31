@@ -34,6 +34,18 @@ let achievements = [{
   description: "You got the world enconomy in big trouble",
   achieved: false,
   requirement: (state) => state.countries.reduce((sum, item) => sum + item.tariff) > 400
+}, {
+  id: 6,
+  name: 'Art of the deal',
+  description: "You've played your art of the deal card",
+  achieved: false,
+  requirement: (state) => state.reset
+},{
+  id: 7,
+  name: 'Winner',
+  description: "You have won the game!",
+  achieved: false,
+  requirement: (state) => state.won
 }];
 
 const achievementItem = 'achievements';
@@ -72,7 +84,12 @@ displayAchievements = () => {
   achievements.forEach(a => {
     const span = document.createElement('span');
     span.id = `${a.id}-${a.name}`;
+
     span.innerHTML = `<p>${a.name}<br/>${a.description}</p>`;
+    if (!a.achieved) {
+      span.className = 'blurred-text';
+    }
+
     achievementContent.appendChild(span);
   });
 }

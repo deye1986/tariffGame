@@ -5,7 +5,9 @@ const gameTimer = document.getElementById("game-timer");
 
 let state = {
   gameTime: 0,
-  countries: []
+  countries: [],
+  reset: false,
+  won: false
 };
 
 if (!gt) {
@@ -25,8 +27,10 @@ counter = () => {
   if (state.gameTime > gameTimerWin 
     && calculateAllTarrifs(state.countries) <= 0) { 
       // TODO: Add celeration animations
+      state.won = true;
       particles.style.display = 'block';
       winningDialog.showModal();
+      checkAchievements();
     }
 }
 
@@ -334,6 +338,12 @@ closeWinningDialogBox = () => {
   clearInterval(timerInterval);
   startGameBtn.disabled = false;
   winningDialog.close();
+}
+
+artOfTheDeal = () => {
+  state.reset = true;
+  resetCountries();
+  checkAchievements();
 }
 
 // accessability attribute settings - found in browser: 
