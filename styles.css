@@ -11,9 +11,9 @@ html {
 
 button {
   font-family: 'PixelifySans-Bold';
-  padding: 1rem;
+  padding: 1.2rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
  }
 
 header {
@@ -211,6 +211,10 @@ footer {
 .footer-link {
   text-decoration: none;
   color:darkgray;
+}
+
+#about-btn {
+  padding: 0.2rem;
 }
 
 @keyframes moveText {
