@@ -119,10 +119,10 @@ clearMessageOnTicker = () => {
 
 const countryItem = 'countries';
 
-calculateAllTarrifs = () => state.countries.reduce((sum, item) => sum + item.tariff, 0);
+calculateAllTarrifs = (countries) => countries.reduce((sum, item) => sum + item.tariff, 0);
 
 updateStatus = () => {
-  const allTarrifs = calculateAllTarrifs();
+  const allTarrifs = calculateAllTarrifs(state.countries);
 
   const status = economicStatuses.find(s => s.min <= allTarrifs
     && s.max >= allTarrifs);
@@ -265,6 +265,7 @@ addTariff = (country, tariff) => {
   genericGameEventMessages(country);
   checkAchievements(state);
   save();
+  updateStatus();
 }
 
 const dialogImg = document.getElementById('dialog-img');
@@ -282,8 +283,6 @@ tariffResponse = (country, response) => {
     
     displayMessageOnTicker(response.response);
   }
-
-  updateStatus();
 }
 
 const hasPlayedItem = 'hasPlayed';
@@ -327,6 +326,7 @@ closeAboutDialogBox = () => {
 
 closeWinningDialogBox = () => {
   resetCountries();
+  localStorage.removeItem(gameTimeItem);
   endParticles();
   state.gameTime = 0;
   setTimer(state.gameTime);

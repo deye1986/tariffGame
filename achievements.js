@@ -1,4 +1,6 @@
-calculateAllTarrifs = (countries) => countries.reduce((sum, item) => sum + item.tariff, 0);
+calculateAllTarrifs = (countries) => {
+  return countries?.reduce((sum, item) => sum + item.tariff, 0);
+}
 
 let achievements = [{
   id: 1,
@@ -11,27 +13,39 @@ let achievements = [{
   name: 'Tariffed a country',
   description: 'You have tariffed your first country!',
   achieved: false,
-  requirement: (state) => state.countries.some(c => c.tariff > 0)
+  requirement: (state) => {
+    return state.countries.some(c => c.tariff > 0);
+  }
 },{
   id: 3,
   name: 'Economic Uncertainty',
   description: 'You have started the ball rolling, down the hill and added tariffs totalling more than 100',
   achieved: false,
-  requirement: (state) =>  calculateAllTarrifs(state.countries) > 100
+  requirement: (state) => {
+    calculateAllTarrifs(state.countries) > 100
+  }
 }];
 
 const achievementItem = 'achievements';
 
+minAchievement = (achievement) => {
+  return {
+    id: achievement.id,
+    achieved: achievement.achieved
+  }
+}
+
 saveAchievements = () => {
-  const achievementsJson = JSON.stringify(achievements);
+  const achievementsJson = JSON.stringify(achievements.map(minAchievement));
   localStorage.setItem(achievementItem, achievementsJson);
 }
 
 loadAchievements = () => {
   const savedAchievements = JSON.parse(localStorage.getItem(achievementItem));
   if (savedAchievements) {
-    console.log('loading achievements')
-    achievements = savedAchievements;
+    savedAchievements.forEach(achievement => {
+      achievements.find(a => a.id == achievement.id).achieved = achievement.achieved;
+    })
   }
 
   displayAchievements();
@@ -41,14 +55,14 @@ const achievementContent = document.getElementById('achievements-content');
 
 clearAchievementsDisplay = () => {
   const spans = achievementContent.querySelector('span');
-  spans.forEach(s => s.remove());
+  spans?.forEach(s => s.remove());
 }
 
 displayAchievements = () => {
   achievements.forEach(a => {
     const span = document.createElement('span');
     span.id = `${a.id}-${a.name}`;
-    span.innerHTML = a.name + '<br/>' + a.description;
+    span.innerHTML = `<p>${a.name}<br/>${a.description}</p>`;
     achievementContent.appendChild(span);
   });
 }
@@ -70,12 +84,9 @@ checkAchievementReached = (achievement, state) => {
 }
 
 checkAchievements = (state) => {
-  console.log('achievements', achievements);
   achievements.filter(a => !a.achieved).forEach(a => {
-    console.log('checking achievement', a);
     checkAchievementReached(a, state);
   });
-  console.log('achievements after', achievements);
 }
 
 const achievementsDialogBox = document.getElementById('achievements-dialog');
