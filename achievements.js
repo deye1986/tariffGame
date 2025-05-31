@@ -1,5 +1,3 @@
-calculateAllTarrifs = (countries) => countries.reduce((sum, item) => sum + item.tariff, 0);
-
 let achievements = [{
   id: 1,
   name: 'The Beginning',
@@ -11,27 +9,41 @@ let achievements = [{
   name: 'Tariffed a country',
   description: 'You have tariffed your first country!',
   achieved: false,
-  requirement: (state) => state.countries.some(c => c.tariff > 0)
+  requirement: (state) => {
+    return state.countries.some(c => c.tariff > 0);
+  }
 },{
   id: 3,
   name: 'Economic Uncertainty',
   description: 'You have started the ball rolling, down the hill and added tariffs totalling more than 100',
   achieved: false,
-  requirement: (state) =>  calculateAllTarrifs(state.countries) > 100
+  requirement: (state) => {
+    // wasn't working with calculateAllTarrifs function, just doing it here 
+    // Assume it's a context issue (this model doesn't know wtf a function outside of itself is)
+    return state.countries.reduce((sum, item) => sum + item.tariff, 0) > 100
+  }
 }];
 
 const achievementItem = 'achievements';
 
+minAchievement = (achievement) => {
+  return {
+    id: achievement.id,
+    achieved: achievement.achieved
+  }
+}
+
 saveAchievements = () => {
-  const achievementsJson = JSON.stringify(achievements);
+  const achievementsJson = JSON.stringify(achievements.map(minAchievement));
   localStorage.setItem(achievementItem, achievementsJson);
 }
 
 loadAchievements = () => {
   const savedAchievements = JSON.parse(localStorage.getItem(achievementItem));
   if (savedAchievements) {
-    console.log('loading achievements')
-    achievements = savedAchievements;
+    savedAchievements.forEach(achievement => {
+      achievements.find(a => a.id == achievement.id).achieved = achievement.achieved;
+    })
   }
 
   displayAchievements();
@@ -40,15 +52,21 @@ loadAchievements = () => {
 const achievementContent = document.getElementById('achievements-content');
 
 clearAchievementsDisplay = () => {
-  const spans = achievementContent.querySelector('span');
-  spans.forEach(s => s.remove());
+  const spans = achievementContent.querySelectorAll('span');
+  spans?.forEach(s => s.remove());
+  const inputs = achievementContent.querySelectorAll('input');
+  inputs?.forEach(i => i.remove());
 }
 
 displayAchievements = () => {
   achievements.forEach(a => {
     const span = document.createElement('span');
+    const check = document.createElement('input');
+    check.type = 'checkbox';
+    check.checked = a.achieved;
     span.id = `${a.id}-${a.name}`;
-    span.innerHTML = a.name + '<br/>' + a.description;
+    span.innerHTML = `<p>${a.name}<br/>${a.description}</p>`;
+    achievementContent.appendChild(check);
     achievementContent.appendChild(span);
   });
 }
@@ -70,12 +88,9 @@ checkAchievementReached = (achievement, state) => {
 }
 
 checkAchievements = (state) => {
-  console.log('achievements', achievements);
   achievements.filter(a => !a.achieved).forEach(a => {
-    console.log('checking achievement', a);
     checkAchievementReached(a, state);
   });
-  console.log('achievements after', achievements);
 }
 
 const achievementsDialogBox = document.getElementById('achievements-dialog');

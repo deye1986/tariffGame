@@ -226,7 +226,13 @@ footer {
 
 #achievements-content {
   margin: 0.2rem;
-  padding: 02rem;
+  padding: 0.2rem;
+  display: flex;
+}
+
+#achievements-content span {
+  padding: 0.2rem;
+  margin: 0.2rem;
 }
 
 @keyframes moveText {
