@@ -96,6 +96,13 @@ canvas{
 
 #secondary-game-ticker {
   padding-right: 1rem;
+  ;
+}
+
+#days-elapsed-text{
+  text-align: center;
+  margin-left: auto;
+  float: left;
 }
 
 /*  buttons */
@@ -105,12 +112,6 @@ canvas{
   padding: 0.175rem;
   max-width: 10rem;
   max-height: 2rem;
-}
-
-#days-elapsed-text{
-  text-align: center;
-  margin-left: auto;
-  float: right;
 }
 
 .game-controls{
